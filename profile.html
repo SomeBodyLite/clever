@@ -4,22 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Clever</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
     <header class="header">
       <div class="container">
         <nav class="navbar">
-          <a class="navbar-brand d-flex align-items-center" href="#">
+          <a class="navbar-brand d-flex align-items-center" href="./index.html">
             <img src="./assets/images/logo.svg" width="148" alt="Clever" />
           </a>
-          <div class="d-flex align-items-center gap-2 ms-5">
+          <div class="d-none align-items-center gap-2 ms-xl-5 d-lg-flex">
             <a href="./index.html" class="nav-item active" role="button">
               <img src="./assets/images/icons/home.svg" alt="Home" width="24" />
               <span class="text-light">Мой кошелек</span>
@@ -54,7 +49,7 @@
             </a>
           </div>
           <div class="d-flex align-items-center gap-2 ms-auto">
-            <div class="justify-content-center align-items-end">
+            <div class="justify-content-center d-none d-lg-flex flex-column">
               <div class="m-0">
                 <span class="text-dark fs-6 fw-normal font-family-Nagel">
                   CLV/USDT:
@@ -94,7 +89,7 @@
                   width="24"
                 />
               </a>
-              <a href="./profile.html" class="rounded-circle" role="button">
+              <a href="./profile.html" class="rounded-circle d-none d-lg-flex" role="button">
                 <img
                   class="rounded-circle"
                   src="./assets/images/profile-icon.png"
@@ -105,6 +100,28 @@
             </div>
           </div>
         </nav>
+      </div>
+      <div class="mobile-navbar d-grid d-lg-none">
+        <a href="./faq.html" class="nav-item">
+          <img src="./assets/images/icons/faq.svg" alt="FAQ" width="24">
+          FAQ
+        </a>
+        <a href="./payments.html" class="nav-item">
+          <img src="./assets/images/icons/folder.svg" alt="Folder" width="24">
+          Реестр
+        </a>
+        <a href="./index.html" class="nav-item ">
+          <img src="./assets/images/icons/home.svg" alt="Home" width="24">
+          Кошелек
+        </a>
+        <a href="#" class="nav-item">
+          <img src="./assets/images/icons/messages.svg" alt="messages" width="24">
+          Поддержка
+        </a>
+        <a href="./profile.html" class="nav-item active">
+          <img class="rounded-circle" src="./assets/images/profile-icon.png" alt="Profile" width="48">
+          Профиль
+        </a>
       </div>
     </header>
     <section class="section-offset">
@@ -141,7 +158,7 @@
                 </p>
               </div>
               <button
-                class="btn btn-light-dark rounded-4 fw-medium"
+                class="btn btn-light-dark rounded-4 fw-medium d-none d-md-flex"
                 style="padding: 1.1rem 1.5rem"
               >
                 Сохранить изменения
@@ -209,7 +226,7 @@
             <div class="form-item">
               <h4 class="fw-medium mb-0">API Token</h4>
               <p class="text-light-gray mb-0">Lorem ipsum dolor sit amet consectetur</p>
-              <label class="d-flex align-items-center position-relative" style="gap: 0.75rem;">
+              <label class="d-flex align-items-center position-relative token-label" style="gap: 0.75rem;">
                 <img class="position-absolute gray-icons" src="./assets/images/icons/code.svg" alt="code" style="left: 1rem;">
                 <input
                 type="text"
@@ -221,20 +238,24 @@
                 />
                 <button class="btn btn-light-dark rounded-4 p-3">
                   <img src="./assets/images/icons/copy-icon.svg" width="24" alt="Copy">
+                  <span>Копировать</span>
                 </button>
                 <button class="btn btn-gray rounded-4 p-3">
                   <img src="./assets/images/icons/update.svg" class="filter-black" width="24" alt="update">
+                  <span>Обновить</span>
                 </button>
               </label>
+            </div>
+
+            <div class="d-flex d-md-none flex-column mt-3">
+              <button class="btn btn-light-dark rounded-4 fw-medium " style="padding: 1.1rem 1.5rem">
+                Сохранить изменения
+              </button>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
