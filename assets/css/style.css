@@ -379,6 +379,18 @@ textarea {
   --Dark-Popup-Window: #1A1A1A;
 }
 
+.dark-theme {
+  --Light-Contrast: #1A1A1A;
+  --Light-Contrast-hover: #1A1A1A;
+  --Light-Dark: #F5F7FB;
+  --Light-Gray: #808080;
+  --dark-card-background: rgba(110, 110, 110, 0.15);
+  --dark-contrast: rgba(62, 62, 62, 0.18);
+  --Dark-Background: #08080A;
+  --Dark-Stroke-Thin: #333;
+  --Dark-Popup-Window: #1A1A1A;
+}
+
 @media (min-width: 1400px) {
 
   .container,
@@ -796,7 +808,7 @@ hr {
 }
 
 .custom-accordeon .accordion-button:after {
-  background-image: url(/assets/images/icons/accordion-button-arrow.png);
+  background-image: url(../images/icons/accordion-button-arrow.png);
   --bs-accordion-btn-icon-width: 2.5rem;
 }
 
@@ -1018,13 +1030,19 @@ hr {
   padding: 2rem 2.75rem;
 }
 
-.swap-input .form-control {}
+.swap-input .form-control {
+  font-size: 1.1rem;
+}
 
 #modal1 {
   min-width: 770px;
 }
 
 #modal2 {
+  max-width: 500px
+}
+
+#modal4 {
   max-width: 500px
 }
 
@@ -1092,10 +1110,97 @@ hr {
   padding: 2.75rem
 }
 
+.transaction-history .line {
+  background-color: var(--Light-Contrast) !important;
+  border-radius: 1.5rem !important;
+}
+
+.transaction-history .accordion-button {
+  box-shadow: none;
+}
+
+.transaction-history .accordion-body {
+  background-color: var(--Light-Contrast) !important;
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  margin-top: 10px;
+}
+
+.transaction-history .accordion-button::after {
+  margin-left: 1rem;
+}
+
+.transaction-value {
+  font-size: 1.25rem;
+}
+
+.transaction-history .table-custom .accordion-item {
+  border-bottom: 0;
+}
+
+.transaction-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.transaction-body>:nth-child(3) {
+  grid-column: span 2;
+}
+
+.wallet-transactions {
+  padding: 2.75rem;
+}
+
+.fs-lg-4 {
+  font-size: 1.5rem !important;
+}
+
 @media (max-width: 991px) {
-  header.header{
+  .wallet-transactions {
+    padding: 1.5rem;
+  }
+
+  .fs-lg-4 {
+    font-size: unset !important;
+  }
+
+  .transaction-history .accordion-body {
+    border-radius: unset;
+    margin-top: 0;
+    padding: 1rem 1.5rem;
+  }
+
+  .waller-overview-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem !important;
+    /* align-items: start !important; */
+    position: relative;
+  }
+
+  .waller-overview-container .d-flex.gap-4.align-items-end {
+    flex-direction: column;
+    align-items: start !important;
+
+  }
+
+  .waller-overview-container .d-flex.gap-2 {
+    position: absolute;
+    bottom: 1.5rem;
+  }
+
+  .wallet-stats-container {
+    padding: 1.5rem !important;
+
+  }
+
+  header.header {
     padding: 1.75rem 0;
   }
+
   .faq-container {
     padding: 1.5rem !important;
   }
@@ -1140,11 +1245,49 @@ hr {
   }
 
   .transaction-history {
-    padding: 2rem 1.5rem;
+    padding: 0;
   }
 
-  .transaction-history h2 {
-    font-size: 2rem;
+  .transaction-history .table-custom {
+    padding-bottom: 2rem;
+  }
+
+  .transaction-history .accordion-button:not(.collapsed) {
+    background-color: var(--Light-Contrast) !important;
+  }
+
+  .transaction-history .accordion-body {
+    background-color: var(--Light-Contrast) !important;
+  }
+
+  .transaction-history .table-custom .line {
+    font-size: 14px !important;
+    border-radius: 0 !important;
+  }
+
+  .transaction-history .table-custom .transaction-info,
+  .transaction-history .table-custom .transaction-info .badge,
+  .transaction-value {
+    font-size: 14px !important;
+  }
+
+  .transaction-history .table-custom .line .transaction-icon {
+    width: 32px;
+  }
+
+  .transaction-history>h2 {
+    font-size: 1.8rem;
+    padding: 2rem 1.5rem;
+    padding-bottom: 0;
+  }
+
+  .transaction-history>.d-flex.justify-content-between.flex-wrap.gap-2 {
+    padding: 0 1.5rem;
+  }
+
+  .transaction-history .line {
+    background-color: transparent !important;
+    min-width: unset;
   }
 
   .mobile-navbar {
@@ -1228,5 +1371,33 @@ hr {
 
   .token-label span {
     display: inline;
+  }
+}
+
+@media (max-width: 576px) {
+
+  .grid-line {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .wallet-actions {
+    /* display: grid !important;
+    grid-template-columns: min-content min-content;
+    grid-template-rows: 1fr 1fr;
+    justify-content: space-around !important; */
+  }
+
+  .waller-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 450px) {
+  .wallet-actions button {
+    width: 25%;
+    padding: 10px !important;
+    aspect-ratio: 1/1;
   }
 }

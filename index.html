@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="./assets/css/nice-select2.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <script defer src="/assets/js/theme-switcher.js"></script>
   </head>
   <body>
     <header class="header">
@@ -69,7 +70,7 @@
               </div>
             </div>
             <div class="d-flex align-items-center gap-2 ms-4">
-              <a href="#" class="nav-item" role="button">
+              <a href="#" class="nav-item theme-switcher" role="button">
                 <img
                   src="./assets/images/icons/change-theme.svg"
                   alt="Change Theme"
@@ -90,7 +91,11 @@
                   width="24"
                 />
               </a>
-              <a href="./profile.html" class="rounded-circle d-none d-lg-flex" role="button">
+              <a
+                href="./profile.html"
+                class="rounded-circle d-none d-lg-flex"
+                role="button"
+              >
                 <img
                   class="rounded-circle"
                   src="./assets/images/profile-icon.png"
@@ -104,23 +109,32 @@
       </div>
       <div class="mobile-navbar d-grid d-lg-none">
         <a href="./faq.html" class="nav-item">
-          <img src="./assets/images/icons/faq.svg" alt="FAQ" width="24">
+          <img src="./assets/images/icons/faq.svg" alt="FAQ" width="24" />
           FAQ
         </a>
         <a href="./payments.html" class="nav-item">
-          <img src="./assets/images/icons/folder.svg" alt="Folder" width="24">
+          <img src="./assets/images/icons/folder.svg" alt="Folder" width="24" />
           Реестр
         </a>
         <a href="./index.html" class="nav-item active">
-          <img src="./assets/images/icons/home.svg" alt="Home" width="24">
+          <img src="./assets/images/icons/home.svg" alt="Home" width="24" />
           Кошелек
         </a>
         <a href="#" class="nav-item">
-          <img src="./assets/images/icons/messages.svg" alt="messages" width="24">
+          <img
+            src="./assets/images/icons/messages.svg"
+            alt="messages"
+            width="24"
+          />
           Поддержка
         </a>
         <a href="./profile.html" class="nav-item">
-          <img class="rounded-circle" src="./assets/images/profile-icon.png" alt="Profile" width="48">
+          <img
+            class="rounded-circle"
+            src="./assets/images/profile-icon.png"
+            alt="Profile"
+            width="48"
+          />
           Профиль
         </a>
       </div>
@@ -145,7 +159,7 @@
                 </div>
               </div>
               <div
-                class="d-flex align-items-center justify-content-between gap-2"
+                class="d-flex align-items-center justify-content-between gap-2 wallet-actions"
               >
                 <button
                   class="btn btn-light-dark p-4 rounded-circle connect"
@@ -313,7 +327,7 @@
     <section class="section-offset">
       <div class="container">
         <div class="row">
-          <div class="bg-white rounded-5 position-relative transaction-history" >
+          <div class="bg-white rounded-5 position-relative transaction-history">
             <h2 class="fw-medium" style="margin-bottom: 1.75rem">
               История операций
             </h2>
@@ -321,7 +335,7 @@
               class="d-flex justify-content-between flex-wrap gap-2"
               style="margin-bottom: 2.25rem"
             >
-              <div class="d-flex gap-2 align-items-center">
+              <div class="d-flex gap-2 align-items-center flex-wrap">
                 <select
                   name="language"
                   id="select-period"
@@ -392,111 +406,353 @@
                 </button>
               </div>
             </div>
-            <div class="table-custom">
-              <div class="line bg-light-contrast rounded-1_5">
-                <div class="d-flex align-items-center gap-1_25">
-                  <div class="d-flex align-items-center gap-1">
-                    <div class="position-relative">
-                      <img
-                        src="./assets/images/icons/usdt.svg"
-                        width="40"
-                        alt="USDT"
-                      />
-                      <img
-                        class="position-absolute"
-                        src="./assets/images/icons/tron.svg"
-                        width="18"
-                        alt="TRON"
-                        style="right: -6px; top: -6px"
-                      />
+            <div
+              class="accordion accordion-flush table-custom"
+              id="accordionFlushExample"
+            >
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingOne">
+                  <button
+                    class="accordion-button collapsed line"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseOne"
+                    aria-expanded="true"
+                    aria-controls="flush-collapseOne"
+                  >
+                    <div class="d-flex align-items-center gap-1_25">
+                      <div class="d-flex align-items-center gap-1">
+                        <div class="position-relative">
+                          <img
+                            src="./assets/images/icons/usdt.svg"
+                            width="40"
+                            alt="USDT"
+                            class="transaction-icon"
+                          />
+                          <img
+                            class="position-absolute"
+                            src="./assets/images/icons/tron.svg"
+                            width="18"
+                            alt="TRON"
+                            style="right: -6px; top: -6px"
+                          />
+                        </div>
+                        <img
+                          src="./assets/images/icons/arrow-right.svg"
+                          width="20"
+                          class="gray-icons"
+                          alt=""
+                        />
+                        <img
+                          src="./assets/images/icons/logo-icon.svg"
+                          width="40"
+                          alt=""
+                          class="transaction-icon"
+                        />
+                      </div>
+                      <div
+                        class="d-flex justify-content-center flex-column gap-2"
+                      >
+                        <div class="d-flex align-items-center gap-1">
+                          <span class="fw-medium lh-1">USDT TRC</span>
+                          <img
+                            src="./assets/images/icons/arrow-right.svg"
+                            width="20"
+                            class="gray-icons"
+                            alt=""
+                          />
+                          <span class="fw-medium lh-1">CLV</span>
+                        </div>
+                        <time
+                          class="text-light-gray lh-1"
+                          datetime="2024-07-20T14:32"
+                          >20 Июля 14:32</time
+                        >
+                      </div>
                     </div>
-                    <img
-                      src="./assets/images/icons/arrow-right.svg"
-                      width="20"
-                      class="gray-icons"
-                      alt=""
-                    />
-                    <img
-                      src="./assets/images/icons/logo-icon.svg"
-                      width="40"
-                      alt=""
-                    />
-                  </div>
-                  <div class="d-flex justify-content-center flex-column gap-2">
-                    <div class="d-flex align-items-center gap-1">
-                      <span class="fw-medium lh-1">USDT TRC</span>
-                      <img
-                        src="./assets/images/icons/arrow-right.svg"
-                        width="20"
-                        class="gray-icons"
-                        alt=""
-                      />
-                      <span class="fw-medium lh-1">CLV</span>
-                    </div>
-                    <time
-                      class="text-light-gray lh-1"
-                      datetime="2024-07-20T14:32"
-                      >20 Июля 14:32</time
+                    <div
+                      class="d-flex align-items-center gap-2 flex-column ms-auto transaction-info"
                     >
+                      <span class="fw-medium lh-1 transaction-value"
+                        >+8.00 CLV</span
+                      >
+                      <span class="badge bg-accent">-2.00 CLV</span>
+                    </div>
+                  </button>
+                </h2>
+                <div
+                  id="flush-collapseOne"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="flush-headingOne"
+                  data-bs-parent="#accordionFlushExample"
+                >
+                  <div class="accordion-body">
+                    <div class="transaction-body">
+                      <div class="bg-white p-0_75 rounded-4">
+                        <div class="d-flex flex-column">
+                          <p class="text-light-gray mb-1_25">Статус</p>
+                          <div class="d-flex align-items-center gap-0_75">
+                            <img
+                              src="./assets/images/icons/approved.svg"
+                              width="32"
+                              alt=""
+                            />
+                            <span class="fs-6 fs-lg-4 fw-medium lh-1">Подтвержден</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="bg-white p-0_75 rounded-4">
+                        <div class="d-flex flex-column">
+                          <p class="text-light-gray mb-1_25">Тип транзакции</p>
+                          <div class="d-flex align-items-center gap-0_75" style="height: 32px;">
+                            <span class="badge bg-warning"></span>
+                            <span class="fs-6 fs-lg-4 fw-medium lh-1">Перевод</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="bg-white p-0_75 rounded-4">
+                        <div class="d-flex flex-column">
+                          <p class="text-light-gray mb-1_25">Hash</p>
+                          <a
+                            href="./transaction-overview.html"
+                            class="fs-6 fw-medium"
+                            style="text-overflow: ellipsis; overflow: hidden"
+                            >8557f3810034abea7ca02e76e22f4c8c55cac7b06877333e49154975d70ca28a</a
+                          >
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div class="d-flex align-items-center gap-2">
-                  <span class="badge bg-accent">-2.00 CLV</span>
-                  <span class="fw-medium lh-1 fs-5">+8.00 CLV</span>
-                  <img src="./assets/images/icons/state.svg" alt="" />
                 </div>
               </div>
-              <div class="line bg-light-contrast rounded-1_5">
-                <div class="d-flex align-items-center gap-1_25">
-                  <div class="d-flex align-items-center gap-1">
-                    <div class="position-relative">
-                      <img
-                        src="./assets/images/icons/usdt.svg"
-                        width="40"
-                        alt="USDT"
-                      />
-                      <img
-                        class="position-absolute"
-                        src="./assets/images/icons/tron.svg"
-                        width="18"
-                        alt="TRON"
-                        style="right: -6px; top: -6px"
-                      />
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingTwo">
+                  <button
+                    class="accordion-button collapsed line"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseTwo"
+                    aria-expanded="false"
+                    aria-controls="flush-collapseTwo"
+                  >
+                    <div class="d-flex align-items-center gap-1_25">
+                      <div class="d-flex align-items-center gap-1">
+                        <div class="position-relative">
+                          <img
+                            src="./assets/images/icons/usdt.svg"
+                            width="40"
+                            alt="USDT"
+                            class="transaction-icon"
+                          />
+                          <img
+                            class="position-absolute"
+                            src="./assets/images/icons/tron.svg"
+                            width="18"
+                            alt="TRON"
+                            style="right: -6px; top: -6px"
+                          />
+                        </div>
+                        <img
+                          src="./assets/images/icons/arrow-right.svg"
+                          width="20"
+                          class="gray-icons"
+                          alt=""
+                        />
+                        <img
+                          src="./assets/images/icons/logo-icon.svg"
+                          width="40"
+                          alt=""
+                          class="transaction-icon"
+                        />
+                      </div>
+                      <div
+                        class="d-flex justify-content-center flex-column gap-2"
+                      >
+                        <div class="d-flex align-items-center gap-1">
+                          <span class="fw-medium lh-1">USDT TRC</span>
+                          <img
+                            src="./assets/images/icons/arrow-right.svg"
+                            width="20"
+                            class="gray-icons"
+                            alt=""
+                          />
+                          <span class="fw-medium lh-1">CLV</span>
+                        </div>
+                        <time
+                          class="text-light-gray lh-1"
+                          datetime="2024-07-20T14:32"
+                          >20 Июля 14:32</time
+                        >
+                      </div>
                     </div>
-                    <img
-                      src="./assets/images/icons/arrow-right.svg"
-                      width="20"
-                      class="gray-icons"
-                      alt=""
-                    />
-                    <img
-                      src="./assets/images/icons/logo-icon.svg"
-                      width="40"
-                      alt=""
-                    />
-                  </div>
-                  <div class="d-flex justify-content-center flex-column gap-2">
-                    <div class="d-flex align-items-center gap-1">
-                      <span class="fw-medium lh-1">USDT TRC</span>
-                      <img
-                        src="./assets/images/icons/arrow-right.svg"
-                        width="20"
-                        class="gray-icons"
-                        alt=""
-                      />
-                      <span class="fw-medium lh-1">CLV</span>
-                    </div>
-                    <time
-                      class="text-light-gray lh-1"
-                      datetime="2024-07-20T14:32"
-                      >20 Июля 14:32</time
+                    <div
+                      class="d-flex align-items-center gap-2 flex-column ms-auto transaction-info"
                     >
+                      <span class="fw-medium lh-1 transaction-value"
+                        >+8.00 CLV</span
+                      >
+                      <span class="badge bg-accent">-2.00 CLV</span>
+                    </div>
+                  </button>
+                </h2>
+                <div
+                  id="flush-collapseTwo"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="flush-headingTwo"
+                  data-bs-parent="#accordionFlushExample"
+                >
+                  <div class="accordion-body">
+                    <div class="transaction-body">
+                      <div class="bg-white p-0_75 rounded-4">
+                        <div class="d-flex flex-column">
+                          <p class="text-light-gray mb-1_25">Статус</p>
+                          <div class="d-flex align-items-center gap-0_75">
+                            <img
+                              src="./assets/images/icons/approved.svg"
+                              width="32"
+                              alt=""
+                            />
+                            <span class="fs-6 fs-lg-4 fw-medium lh-1">Подтвержден</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="bg-white p-0_75 rounded-4">
+                        <div class="d-flex flex-column">
+                          <p class="text-light-gray mb-1_25">Тип транзакции</p>
+                          <div class="d-flex align-items-center gap-0_75" style="height: 32px;">
+                            <span class="badge bg-warning"></span>
+                            <span class="fs-6 fs-lg-4 fw-medium lh-1">Перевод</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="bg-white p-0_75 rounded-4">
+                        <div class="d-flex flex-column">
+                          <p class="text-light-gray mb-1_25">Hash</p>
+                          <a
+                            href="./transaction-overview.html"
+                            class="fs-6 fw-medium"
+                            style="text-overflow: ellipsis; overflow: hidden"
+                            >8557f3810034abea7ca02e76e22f4c8c55cac7b06877333e49154975d70ca28a</a
+                          >
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div class="d-flex align-items-center gap-2">
-                  <span class="badge bg-accent">-2.00 CLV</span>
-                  <span class="fw-medium lh-1 fs-5">+8.00 CLV</span>
-                  <img src="./assets/images/icons/state.svg" alt="" />
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingThree">
+                  <button
+                    class="accordion-button collapsed line"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseThree"
+                    aria-expanded="false"
+                    aria-controls="flush-collapseThree"
+                  >
+                    <div class="d-flex align-items-center gap-1_25">
+                      <div class="d-flex align-items-center gap-1">
+                        <div class="position-relative">
+                          <img
+                            src="./assets/images/icons/usdt.svg"
+                            width="40"
+                            alt="USDT"
+                            class="transaction-icon"
+                          />
+                          <img
+                            class="position-absolute"
+                            src="./assets/images/icons/tron.svg"
+                            width="18"
+                            alt="TRON"
+                            style="right: -6px; top: -6px"
+                          />
+                        </div>
+                        <img
+                          src="./assets/images/icons/arrow-right.svg"
+                          width="20"
+                          class="gray-icons"
+                          alt=""
+                        />
+                        <img
+                          src="./assets/images/icons/logo-icon.svg"
+                          width="40"
+                          alt=""
+                          class="transaction-icon"
+                        />
+                      </div>
+                      <div
+                        class="d-flex justify-content-center flex-column gap-2"
+                      >
+                        <div class="d-flex align-items-center gap-1">
+                          <span class="fw-medium lh-1">USDT TRC</span>
+                          <img
+                            src="./assets/images/icons/arrow-right.svg"
+                            width="20"
+                            class="gray-icons"
+                            alt=""
+                          />
+                          <span class="fw-medium lh-1">CLV</span>
+                        </div>
+                        <time
+                          class="text-light-gray lh-1"
+                          datetime="2024-07-20T14:32"
+                          >20 Июля 14:32</time
+                        >
+                      </div>
+                    </div>
+                    <div
+                      class="d-flex align-items-center gap-2 flex-column ms-auto transaction-info"
+                    >
+                      <span class="fw-medium lh-1 transaction-value"
+                        >+8.00 CLV</span
+                      >
+                      <span class="badge bg-accent">-2.00 CLV</span>
+                    </div>
+                  </button>
+                </h2>
+                <div
+                  id="flush-collapseThree"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="flush-headingThree"
+                  data-bs-parent="#accordionFlushExample"
+                >
+                  <div class="accordion-body">
+                    <div class="transaction-body">
+                      <div class="bg-white p-0_75 rounded-4">
+                        <div class="d-flex flex-column">
+                          <p class="text-light-gray mb-1_25">Статус</p>
+                          <div class="d-flex align-items-center gap-0_75">
+                            <img
+                              src="./assets/images/icons/approved.svg"
+                              width="32"
+                              alt=""
+                            />
+                            <span class="fs-6 fs-lg-4 fw-medium lh-1">Подтвержден</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="bg-white p-0_75 rounded-4">
+                        <div class="d-flex flex-column">
+                          <p class="text-light-gray mb-1_25">Тип транзакции</p>
+                          <div class="d-flex align-items-center gap-0_75" style="height: 32px;">
+                            <span class="badge bg-warning"></span>
+                            <span class="fs-6 fs-lg-4 fw-medium lh-1">Перевод</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="bg-white p-0_75 rounded-4">
+                        <div class="d-flex flex-column">
+                          <p class="text-light-gray mb-1_25">Hash</p>
+                          <a
+                            href="./transaction-overview.html"
+                            class="fs-6 fw-medium"
+                            style="text-overflow: ellipsis; overflow: hidden"
+                            >8557f3810034abea7ca02e76e22f4c8c55cac7b06877333e49154975d70ca28a</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -504,7 +760,7 @@
         </div>
       </div>
     </section>
-    <div class="position-fixed" style="top: 100px;right: 20px;">
+    <div class="position-fixed" style="top: 100px; right: 20px">
       <button class="btn btn-dark connect" data-modal="modal1">m1</button>
       <button class="btn btn-dark connect" data-modal="modal2">m2</button>
       <button class="btn btn-dark connect" data-modal="modal3">m3</button>
