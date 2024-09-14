@@ -186,7 +186,15 @@
             </div>
             <div class="col-lg-6 col-xl-3 col-md-6">
               <div class="bg-white p-4 rounded-5 d-flex flex-column gap-1_25">
-                <h3>Placeholder</h3>
+                <!-- .tps-container + (full, high, medium, low,)  -->
+                <!-- .tps-container (without class) or .zero = empty -->
+                <div class="tps-container high">
+                  <div class="d-flex flex-column align-items-center gap-0">
+                    <p class="text-light-gray m-0 fw-medium">TPS</p>
+                    <span class="tps-value">3,941</span>
+                    <span class="tps-balance">/5,000</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -196,7 +204,7 @@
     <section class="section-offset">
       <div class="container">
         <div class="section-content">
-          <div class="bg-white rounded-5" style="padding: 2.75rem ">
+          <div class="bg-white rounded-5 payments-block">
             <h2 class="fw-medium mb-4">Все платежи</h2>
             <div class="table-container">
               <table class="table custom-table align-middle m-0">
