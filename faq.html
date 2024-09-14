@@ -6,13 +6,15 @@
     <title>Clever</title>
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <script defer src="/assets/js/theme-switcher.js"></script>
   </head>
   <body>
     <header class="header">
       <div class="container">
         <nav class="navbar">
           <a class="navbar-brand d-flex align-items-center" href="./index.html">
-            <img src="./assets/images/logo.svg" width="148" alt="Clever" />
+            <img class="logo" src="./assets/images/logo.svg" width="148" alt="Clever" />
+            <img class="logo-dark" src="./assets/images/logo-light.svg" width="148" alt="Clever" />
           </a>
           <div class="d-none align-items-center gap-2 ms-xl-5 d-lg-flex">
             <a href="./index.html" class="nav-item" role="button">
@@ -68,7 +70,7 @@
               </div>
             </div>
             <div class="d-flex align-items-center gap-2 ms-4">
-              <a href="#" class="nav-item" role="button">
+              <a href="#" class="nav-item theme-switcher" role="button">
                 <img
                   src="./assets/images/icons/change-theme.svg"
                   alt="Change Theme"
@@ -82,14 +84,129 @@
                   width="24"
                 />
               </a>
-              <a href="#" class="nav-item" role="button">
-                <img
-                  src="./assets/images/icons/notify.svg"
-                  alt="Notifications"
-                  width="24"
-                />
-              </a>
-              <a href="./profile.html" class="rounded-circle d-none d-lg-flex" role="button">
+              <div class="dd-wrapper">
+                <button class="nav-item dd">
+                  <img
+                    src="./assets/images/icons/notify.svg"
+                    alt="Notifications"
+                    width="24"
+                  />
+                </button>
+                <div class="dd-menu notifications">
+                  <div class="notifications-header">
+                    <div class="d-flex align-items-center gap-2">
+                      <h5 class="notifications-title m-0">Оповещения</h5>
+                      <span class="badge bg-light-contrast text-light-dark fw-normal">12</span>
+                    </div>
+                    <button class="btn" onclick="closeAllDropdowns()">
+                      <img src="./assets/images/icons/close.svg" width="20" alt="">
+                    </button>
+                  </div>
+                  <div class="notifications-body">
+                    <div class="notify-item">
+                      <div class="position-relative">
+                        <img src="./assets/images/icons/usdt.svg" width="40" alt="USDT">
+                        <img class="position-absolute" src="./assets/images/icons/tron.svg" width="18" alt="TRON" style="right: -6px; top: -6px">
+                      </div>
+                      <div class="notify-info">
+                        <h4 class="title lh-1">Пополнение USDT (TRC)</h4>
+                        <time datetime="2021-12-01" class="text-secondary lh-1">3 ч. назад</time>
+                        <span class="badge bg-light-contrast text-green-alert fs-6 fw-medium">240.00 USDT</span>
+                      </div>
+                    </div>
+                    <div class="notify-item">
+                      <div class="position-relative">
+                        <img src="./assets/images/icons/usdt.svg" width="40" alt="USDT">
+                        <img class="position-absolute" src="./assets/images/icons/eth.svg" width="18" alt="ETH" style="right: -6px; top: -6px">
+                      </div>
+                      <div class="notify-info">
+                        <h4 class="title lh-1">Пополнение USDT (ERC)</h4>
+                        <time datetime="2021-12-01" class="text-secondary lh-1">3 ч. назад</time>
+                        <span class="badge bg-light-contrast text-green-alert fs-6 fw-medium">240.00 USDT</span>
+                      </div>
+                    </div>
+                    <div class="notify-item">
+                      <div class="position-relative">
+                        <img src="./assets/images/icons/logo-icon.svg" width="40" alt="">
+                      </div>
+                      <div class="notify-info">
+                        <h4 class="title lh-1">Покупка CLV</h4>
+                        <time datetime="2021-12-01" class="text-secondary lh-1">3 ч. назад</time>
+                        <span class="badge bg-light-contrast text-green-alert fs-6 fw-medium">240.00 USDT</span>
+                      </div>
+                    </div>
+                    <div class="notify-item">
+                      <div class="position-relative">
+                        <img src="./assets/images/icons/usdt.svg" width="40" alt="USDT">
+                        <img class="position-absolute" src="./assets/images/icons/tron.svg" width="18" alt="TRON" style="right: -6px; top: -6px">
+                      </div>
+                      <div class="notify-info">
+                        <h4 class="title lh-1">Пополнение USDT (TRC)</h4>
+                        <time datetime="2021-12-01" class="text-secondary lh-1">3 ч. назад</time>
+                        <span class="badge bg-light-contrast text-green-alert fs-6 fw-medium">240.00 USDT</span>
+                      </div>
+                    </div>
+                    <div class="notify-item">
+                      <div class="position-relative">
+                        <img src="./assets/images/icons/usdt.svg" width="40" alt="USDT">
+                        <img class="position-absolute" src="./assets/images/icons/eth.svg" width="18" alt="ETH" style="right: -6px; top: -6px">
+                      </div>
+                      <div class="notify-info">
+                        <h4 class="title lh-1">Пополнение USDT (ERC)</h4>
+                        <time datetime="2021-12-01" class="text-secondary lh-1">3 ч. назад</time>
+                        <span class="badge bg-light-contrast text-green-alert fs-6 fw-medium">240.00 USDT</span>
+                      </div>
+                    </div>
+                    <div class="notify-item">
+                      <div class="position-relative">
+                        <img src="./assets/images/icons/logo-icon.svg" width="40" alt="">
+                      </div>
+                      <div class="notify-info">
+                        <h4 class="title lh-1">Покупка CLV</h4>
+                        <time datetime="2021-12-01" class="text-secondary lh-1">3 ч. назад</time>
+                        <span class="badge bg-light-contrast text-green-alert fs-6 fw-medium">240.00 USDT</span>
+                      </div>
+                    </div>
+                    <div class="notify-item">
+                      <div class="position-relative">
+                        <img src="./assets/images/icons/usdt.svg" width="40" alt="USDT">
+                        <img class="position-absolute" src="./assets/images/icons/tron.svg" width="18" alt="TRON" style="right: -6px; top: -6px">
+                      </div>
+                      <div class="notify-info">
+                        <h4 class="title lh-1">Пополнение USDT (TRC)</h4>
+                        <time datetime="2021-12-01" class="text-secondary lh-1">3 ч. назад</time>
+                        <span class="badge bg-light-contrast text-green-alert fs-6 fw-medium">240.00 USDT</span>
+                      </div>
+                    </div>
+                    <div class="notify-item">
+                      <div class="position-relative">
+                        <img src="./assets/images/icons/usdt.svg" width="40" alt="USDT">
+                        <img class="position-absolute" src="./assets/images/icons/eth.svg" width="18" alt="ETH" style="right: -6px; top: -6px">
+                      </div>
+                      <div class="notify-info">
+                        <h4 class="title lh-1">Пополнение USDT (ERC)</h4>
+                        <time datetime="2021-12-01" class="text-secondary lh-1">3 ч. назад</time>
+                        <span class="badge bg-light-contrast text-green-alert fs-6 fw-medium">240.00 USDT</span>
+                      </div>
+                    </div>
+                    <div class="notify-item">
+                      <div class="position-relative">
+                        <img src="./assets/images/icons/logo-icon.svg" width="40" alt="">
+                      </div>
+                      <div class="notify-info">
+                        <h4 class="title lh-1">Покупка CLV</h4>
+                        <time datetime="2021-12-01" class="text-secondary lh-1">3 ч. назад</time>
+                        <span class="badge bg-light-contrast text-green-alert fs-6 fw-medium">240.00 USDT</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <a
+                href="./profile.html"
+                class="rounded-circle d-none d-lg-flex"
+                role="button"
+              >
                 <img
                   class="rounded-circle"
                   src="./assets/images/profile-icon.png"
@@ -102,24 +219,33 @@
         </nav>
       </div>
       <div class="mobile-navbar d-grid d-lg-none">
-        <a href="./faq.html" class="nav-item active">
-          <img src="./assets/images/icons/faq.svg" alt="FAQ" width="24">
+        <a href="./faq.html" class="nav-item">
+          <img src="./assets/images/icons/faq.svg" alt="FAQ" width="24" />
           FAQ
         </a>
         <a href="./payments.html" class="nav-item">
-          <img src="./assets/images/icons/folder.svg" alt="Folder" width="24">
+          <img src="./assets/images/icons/folder.svg" alt="Folder" width="24" />
           Реестр
         </a>
-        <a href="./index.html" class="nav-item ">
-          <img src="./assets/images/icons/home.svg" alt="Home" width="24">
+        <a href="./index.html" class="nav-item active">
+          <img src="./assets/images/icons/home.svg" alt="Home" width="24" />
           Кошелек
         </a>
         <a href="#" class="nav-item">
-          <img src="./assets/images/icons/messages.svg" alt="messages" width="24">
+          <img
+            src="./assets/images/icons/messages.svg"
+            alt="messages"
+            width="24"
+          />
           Поддержка
         </a>
         <a href="./profile.html" class="nav-item">
-          <img class="rounded-circle" src="./assets/images/profile-icon.png" alt="Profile" width="48">
+          <img
+            class="rounded-circle"
+            src="./assets/images/profile-icon.png"
+            alt="Profile"
+            width="48"
+          />
           Профиль
         </a>
       </div>
@@ -371,5 +497,7 @@
       </div>
     </section>
     <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/dropdown.js"></script>
+    <div class="custom-dd-overlay"></div>
   </body>
 </html>
