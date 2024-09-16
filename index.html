@@ -359,7 +359,7 @@
                   </div>
                 </div>
               </div>
-              <a
+              <!-- <a
                 href="./profile.html"
                 class="rounded-circle d-none d-lg-flex"
                 role="button"
@@ -370,7 +370,25 @@
                   alt="Profile"
                   width="48"
                 />
-              </a>
+              </a> -->
+              <div class="dropdown custom-dropdown">
+                <button class="rounded-circle btn" data-bs-offset="10,20" data-bs-toggle="dropdown" aria-expanded="false" style="padding: 0;">
+                  <img
+                    class="rounded-circle"
+                    src="./assets/images/profile-icon.png"
+                    alt="Profile"
+                    width="48"
+                  />
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li><a class="dropdown-item " href="#">Аккаунт</a></li>
+                  <li><a class="dropdown-item" href="#">Настройки</a></li>
+                  <li><a class="dropdown-item" href="#">Ещё че то</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">еще что то 2</a></li>
+                </ul>
+              </div>
+              
               <a
                 href="./login.html"
                 class="btn btn-light-dark rounded-4 fw-500"
@@ -607,7 +625,7 @@
     </section>
     <section class="section-offset">
       <div class="container">
-        <div class="row">
+        <div class="section-content">
           <div class="bg-white rounded-5 position-relative transaction-history">
             <h2 class="fw-medium" style="margin-bottom: 1.75rem">
               История операций

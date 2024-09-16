@@ -266,7 +266,7 @@
               <div class="bg-white p-4 rounded-5 d-flex flex-column gap-1_25">
                 <h5 class="text-gray fw-medium m-0 lh-1">Всего кошельков</h5>
                 <div class="d-flex align-items-end gap-1 balance-wrapper">
-                  <span class="balance fw-medium lh-1">812</span>
+                  <span data-bs-toggle="tooltip" data-bs-title="812" data-bs-custom-class="custom-tooltip" class="balance fw-medium lh-1">812</span>
                   <span class="text-light-gray">шт.</span>
                 </div>
                 <div class="d-flex align-items-center">
@@ -282,7 +282,7 @@
               <div class="bg-white p-4 rounded-5 d-flex flex-column gap-1_25">
                 <h5 class="text-gray fw-medium m-0 lh-1">Всего транзакций</h5>
                 <div class="d-flex align-items-end gap-1 balance-wrapper">
-                  <span class="balance fw-medium lh-1">460</span>
+                  <span data-bs-toggle="tooltip" data-bs-title="460" data-bs-custom-class="custom-tooltip" class="balance fw-medium lh-1">460</span>
                   <span class="text-light-gray">шт.</span>
                 </div>
                 <div class="d-flex align-items-center">
@@ -297,14 +297,14 @@
             <div class="col-lg-6 col-xl-3 col-md-6">
               <div class="bg-white p-4 rounded-5 d-flex flex-column gap-1_25">
                 <h5 class="text-gray fw-medium m-0 lh-1">Хранение USDT</h5>
-                <div class="d-flex align-items-center gap-2">
+                <div class="d-flex align-items-center gap-2 balance-wrapper">
                   <img
                     src="./assets/images/icons/usdt.svg"
                     width="40"
                     alt="USDT"
                   />
-                  <div class="d-flex align-items-end gap-1 balance-wrapper flex-fill">
-                    <span class="balance fw-medium lh-1">12,425</span>
+                  <div class="d-flex align-items-end gap-1  flex-fill">
+                    <span data-bs-toggle="tooltip" data-bs-title="12,425,317" data-bs-custom-class="custom-tooltip" class="balance balance-hard fw-medium lh-1">12,425,317</span>
                     <span class="text-light-gray">шт.</span>
                   </div>
                 </div>
@@ -386,12 +386,20 @@
     <script src="./assets/js/dropdown.js"></script>
     <div class="custom-dd-overlay"></div>
     <script>
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
       const balanceElements = document.querySelectorAll('.balance');
+      const balanceHardElements = document.querySelectorAll('.balance.balance-hard');
 
       function updateBalanceWidths() {
         balanceElements.forEach(balance => {
           const balanceWrapper = balance.closest('.balance-wrapper');
-          balance.style.width = `${balanceWrapper.offsetWidth}px`;
+          balance.style.maxWidth = `${balanceWrapper.offsetWidth}px`;
+        });
+
+        balanceHardElements.forEach(balance => {
+          const balanceWrapper = balance.closest('.balance-wrapper');
+          balance.style.maxWidth = `${balanceWrapper.offsetWidth - 75}px`;
         });
       }
 

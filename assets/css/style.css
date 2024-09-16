@@ -662,6 +662,8 @@ a:hover {
 
 .balance {
   font-size: 2.5rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .grid-line {
@@ -1122,6 +1124,11 @@ hr {
   padding: 1rem 0.75rem;
   letter-spacing: 0.00875rem;
   white-space: nowrap;
+  color: inherit;
+}
+
+.dark-theme .custom-table tbody td {
+  background: transparent;
 }
 
 .custom-table td:first-child {
@@ -1187,6 +1194,10 @@ hr {
   transform: translateX(-50%);
 }
 
+.dark-theme .separator::after {
+  border: 1px var(--Dark-Stroke-Thin) solid;
+}
+
 /* .modal {
   transition: .2s ease;
 } */
@@ -1203,6 +1214,10 @@ hr {
   opacity: 0;
   transition: opacity .2s ease, visibility .2s ease;
   visibility: hidden;
+}
+
+.custom-modal-overlay {
+  z-index: 6;
 }
 
 .custom-modal-overlay.visible,
@@ -1256,7 +1271,12 @@ hr {
 .swap-input .form-control {
   font-size: 1.1rem;
 }
-
+.dark-theme .custom-dropdown .dropdown-menu{
+  background-color: var(--Dark-Popup-Window)
+}
+.dark-theme .custom-dropdown .dropdown-item:hover {
+  background-color: var(--card-bg);
+}
 #modal1 {
   min-width: 770px;
 }
@@ -1338,17 +1358,32 @@ hr {
   padding: 2.75rem
 }
 
-.wallet-transactions .accordion-item {
+.accordion-custom {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.accordion-custom .accordion-button::after {
+  height: 12px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7' viewBox='0 0 11 7' fill='none'%3E%3Cpath d='M1 0.75L5.5 5.25L10 0.75' stroke='%23C3C3C3' stroke-width='2'/%3E%3C/svg%3E");
+}
+
+.accordion-custom .accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7' viewBox='0 0 11 7' fill='none'%3E%3Cpath d='M1 0.75L5.5 5.25L10 0.75' stroke='%23808080' stroke-width='2'/%3E%3C/svg%3E");
+}
+
+.accordion-custom .accordion-item {
   border-radius: 1.5rem !important;
   background-color: var(--Light-Contrast) !important;
   overflow: hidden;
 }
 
-.dark-theme .wallet-transactions .accordion-item {
+.dark-theme .accordion-custom .accordion-item {
   background-color: var(--dark-contrast) !important;
 }
 
-.wallet-transactions .line {
+.accordion-custom .accordion-button {
   background-color: transparent !important;
 }
 
@@ -1357,18 +1392,18 @@ hr {
   border-radius: 1.5rem !important;
 }
 
-.wallet-transactions .accordion-button,
+.accordion-custom .accordion-button,
 .transaction-history .accordion-button {
   transition: none;
   box-shadow: none;
 }
 
-.wallet-transactions .accordion-body {
+.accordion-custom .accordion-body {
   padding: 1.5rem;
   border-top: 1px solid #DCDCDC;
 }
 
-.dark-theme .wallet-transactions .accordion-body {
+.dark-theme .accordion-custom .accordion-body {
   padding: 1.5rem;
   border-top: 1px solid var(--Dark-Stroke-Thin);
 }
@@ -1676,20 +1711,25 @@ hr {
   grid-template-rows: 1fr 1fr;
 }
 
+.custom-tooltip {
+  --bs-tooltip-bg: var(--Light-Dark);
+  --bs-tooltip-color: var(--Light-Contrast);
+}
+
 @media (max-width: 991px) {
   .payments-block {
     padding: 1.5rem;
   }
 
-  .payments-block .custom-table thead {
+  /* .payments-block .custom-table thead {
     display: none;
-  }
+  } */
 
-  .payments-block .custom-table tr,
+  /* .payments-block .custom-table tr,
   .payments-block .custom-table tbody {
     display: flex;
     flex-direction: column;
-  }
+  } */
 
   .dd-menu.notifications,
   .dd-menu.notifications.active {
