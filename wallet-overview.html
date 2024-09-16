@@ -496,7 +496,7 @@
         <div class="section-content">
           <div class="bg-white rounded-5 wallet-transactions" >
             <h2 class="fw-medium mb-4">Операции кошелька</h2>
-            <div class="table-container">
+            <div class="table-container d-none">
               <table class="table custom-table align-middle m-0">
                 <thead>
                   <tr>
@@ -606,6 +606,35 @@
                 </tbody>
               </table>
             </div>
+            <div class="accordion accordion-flush table-custom" id="walletTransactionsList">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingOne">
+                  <button
+                    class="accordion-button collapsed line"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseOne"
+                    aria-expanded="true"
+                    aria-controls="flush-collapseOne"
+                  >
+                    Accordion Item #1 
+                    <a href="/index.html">asdasdasdasdasdasd</a>
+                  </button>
+                </h2>
+                <div
+                  id="flush-collapseOne"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="flush-headingOne"
+                  data-bs-parent="#walletTransactionsList"
+                >
+                  <div class="accordion-body">
+                    This is the first item's accordion body.
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            
           </div>
         </div>
       </div>

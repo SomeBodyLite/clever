@@ -102,7 +102,8 @@
                   width="24"
                 />
               </a>
-              <div class="dd-wrapper">
+              <!-- Если у notify-container есть класс new, то добавляется точка над кнопкой уведомлений, показывая что есть новые. -->
+              <div class="dd-wrapper notify-container new">
                 <button class="nav-item dd">
                   <img
                     src="./assets/images/icons/notify.svg"
@@ -425,7 +426,7 @@
                 class="d-flex align-items-center justify-content-between gap-2 wallet-actions"
               >
                 <button
-                  class="btn btn-light-dark p-4 rounded-circle connect dark-button"
+                  class="btn btn-light-dark connect dark-button"
                   data-modal="modal1"
                 >
                   <img
@@ -435,7 +436,7 @@
                   />
                 </button>
                 <button
-                  class="btn btn-light-dark p-4 rounded-circle connect dark-button"
+                  class="btn btn-light-dark connect dark-button"
                   data-modal="modal2"
                 >
                   <img
@@ -445,13 +446,13 @@
                   />
                 </button>
                 <button
-                  class="btn btn-light-dark p-4 rounded-circle connect dark-button"
+                  class="btn btn-light-dark connect dark-button"
                   data-modal="modal4"
                 >
                   <img src="./assets/images/icons/send.svg" width="28" alt="" />
                 </button>
                 <button
-                  class="btn btn-light-dark p-4 rounded-circle dark-button"
+                  class="btn btn-light-dark dark-button"
                 >
                   <img
                     src="./assets/images/icons/history.svg"
@@ -673,17 +674,17 @@
             </div>
             <div
               class="accordion accordion-flush table-custom"
-              id="accordionFlushExample"
+              id="transactionsList"
             >
               <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingOne">
+                <h2 class="accordion-header" id="trans-1-head">
                   <button
                     class="accordion-button collapsed line"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#flush-collapseOne"
+                    data-bs-target="#trans-1"
                     aria-expanded="true"
-                    aria-controls="flush-collapseOne"
+                    aria-controls="trans-1"
                   >
                     <div class="d-flex align-items-center gap-1_25">
                       <div class="d-flex align-items-center gap-1">
@@ -746,10 +747,10 @@
                   </button>
                 </h2>
                 <div
-                  id="flush-collapseOne"
+                  id="trans-1"
                   class="accordion-collapse collapse"
-                  aria-labelledby="flush-headingOne"
-                  data-bs-parent="#accordionFlushExample"
+                  aria-labelledby="trans-1-head"
+                  data-bs-parent="#transactionsList"
                 >
                   <div class="accordion-body">
                     <div class="transaction-body">
@@ -798,14 +799,14 @@
                 </div>
               </div>
               <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingTwo">
+                <h2 class="accordion-header" id="trans-2-head">
                   <button
                     class="accordion-button collapsed line"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#flush-collapseTwo"
+                    data-bs-target="#trans-2"
                     aria-expanded="false"
-                    aria-controls="flush-collapseTwo"
+                    aria-controls="trans-2"
                   >
                     <div class="d-flex align-items-center gap-1_25">
                       <div class="d-flex align-items-center gap-1">
@@ -868,10 +869,10 @@
                   </button>
                 </h2>
                 <div
-                  id="flush-collapseTwo"
+                  id="trans-2"
                   class="accordion-collapse collapse"
-                  aria-labelledby="flush-headingTwo"
-                  data-bs-parent="#accordionFlushExample"
+                  aria-labelledby="trans-2-head"
+                  data-bs-parent="#transactionsList"
                 >
                   <div class="accordion-body">
                     <div class="transaction-body">
@@ -920,14 +921,14 @@
                 </div>
               </div>
               <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingThree">
+                <h2 class="accordion-header" id="trans-3-head">
                   <button
                     class="accordion-button collapsed line"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#flush-collapseThree"
+                    data-bs-target="#trans-3"
                     aria-expanded="false"
-                    aria-controls="flush-collapseThree"
+                    aria-controls="trans-3"
                   >
                     <div class="d-flex align-items-center gap-1_25">
                       <div class="d-flex align-items-center gap-1">
@@ -990,10 +991,10 @@
                   </button>
                 </h2>
                 <div
-                  id="flush-collapseThree"
+                  id="trans-3"
                   class="accordion-collapse collapse"
-                  aria-labelledby="flush-headingThree"
-                  data-bs-parent="#accordionFlushExample"
+                  aria-labelledby="trans-3-head"
+                  data-bs-parent="#transactionsList"
                 >
                   <div class="accordion-body">
                     <div class="transaction-body">

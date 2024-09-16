@@ -1338,14 +1338,37 @@ hr {
   padding: 2.75rem
 }
 
+.wallet-transactions .accordion-item {
+  border-radius: 1.5rem !important;
+  background-color: var(--Light-Contrast) !important;
+  overflow: hidden;
+}
+.dark-theme .wallet-transactions .accordion-item {
+  background-color: var(--dark-contrast) !important;
+}
+
+.wallet-transactions .line {
+  background-color: transparent !important;
+}
+
 .transaction-history .line {
   background-color: var(--Light-Contrast) !important;
   border-radius: 1.5rem !important;
 }
 
+.wallet-transactions .accordion-button,
 .transaction-history .accordion-button {
   transition: none;
   box-shadow: none;
+}
+
+.wallet-transactions .accordion-body {
+  padding: 1.5rem;
+  border-top: 1px solid #DCDCDC;
+}
+.dark-theme .wallet-transactions .accordion-body {
+  padding: 1.5rem;
+  border-top: 1px solid var(--Dark-Stroke-Thin);
 }
 
 .transaction-history .accordion-body {
@@ -1428,7 +1451,7 @@ hr {
   top: 2.5rem;
   bottom: 2.5rem;
   left: unset;
-  z-index: 5;
+  z-index: 6;
 }
 
 .dd-menu.notifications.active {
@@ -1459,7 +1482,7 @@ hr {
   line-height: normal;
 }
 
-.notifications-title {
+.dark-theme .notifications-title {
   color: var(--Light-Contrast);
 }
 
@@ -1467,6 +1490,26 @@ hr {
   padding: 1.25rem 1.75rem;
   display: flex;
   gap: 1.25rem;
+}
+
+.wallet-actions .btn-light-dark {
+  border-radius: 6.9375rem;
+  padding: 1.1rem 1.5rem;
+}
+
+.notify-container {}
+
+.notify-container.new:after {
+  content: "";
+  position: absolute;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50px;
+  aspect-ratio: 1/1;
+  background: var(--Red-Alert);
+  right: 0;
+  top: 0;
+  z-index: 5;
 }
 
 .notifications-body {
@@ -1731,11 +1774,11 @@ hr {
     background-color: var(--Light-Contrast) !important;
   }
 
-  .transaction-history .accordion-button:not(.collapsed) {
+  .dark-theme .transaction-history .accordion-button:not(.collapsed) {
     background-color: var(--dark-contrast) !important;
   }
 
-  .transaction-history .accordion-body {
+  .dark-theme .transaction-history .accordion-body {
     background-color: var(--dark-contrast) !important;
   }
 
