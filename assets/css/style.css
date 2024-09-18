@@ -1271,12 +1271,30 @@ hr {
 .swap-input .form-control {
   font-size: 1.1rem;
 }
-.dark-theme .custom-dropdown .dropdown-menu{
+
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: var(--Light-Dark);
+}
+
+.dark-theme .dropdown-item.active,
+.dark-theme .dropdown-item:active {
+  background-color: var(--Light-Contrast);
+  color: var(--Light-Dark)
+}
+
+.dark-theme .custom-dropdown .dropdown-menu {
   background-color: var(--Dark-Popup-Window)
 }
+
 .dark-theme .custom-dropdown .dropdown-item:hover {
   background-color: var(--card-bg);
 }
+
+.dark-theme .dropdown-item.active:hover {
+  background-color: var(--Light-Contrast-hover);
+}
+
 #modal1 {
   min-width: 770px;
 }
