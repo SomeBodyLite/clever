@@ -1316,6 +1316,33 @@ hr {
   aspect-ratio: 1/1;
   width: 100%;
   background: #fff;
+  position: relative;
+}
+
+.qr-container.clever::before,
+.qr-container.trc::before,
+.qr-container.erc::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 54px;
+  height: 54px;
+  background-repeat: no-repeat;
+  background-size: cover
+}
+
+.qr-container.clever::before {
+  background-image: url(/assets/images/icons/logo-icon.svg);
+}
+
+.qr-container.trc::before {
+  background-image: url(/assets/images/icons/usdt_TRC.svg);
+}
+
+.qr-container.erc::before {
+  background-image: url(/assets/images/icons/usdt_ERC.svg);
 }
 
 .custom-check {
@@ -1700,12 +1727,26 @@ hr {
   margin: 0 auto;
 }
 
+.reg-container {
+  padding: 2.75rem;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.dark-theme .reg-container {
+  background: var(--dark-card-background);
+}
+
 .login-container .qr-container {
   max-width: 300px;
   width: 100%;
 }
 
-.login-container .qr-container img {
+.qr-container img {
   width: 100%;
 }
 
@@ -1988,6 +2029,11 @@ hr {
     text-align: center;
   }
 
+  .reg-container {
+    padding: 1.5rem;
+    text-align: center;
+  }
+
   .login-buttons {
     display: flex;
     flex-direction: column;
@@ -2055,4 +2101,57 @@ hr {
 
 .dark-theme .dark-button img {
   filter: none;
+}
+
+.seed-phrase-container {
+  display: grid;
+  /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+  /* grid-template-rows: 1fr; */
+  gap: 8px 8px;
+  width: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  padding: 0;
+  margin: 0;
+}
+
+.seed-phrase-item {
+  border-radius: 8px;
+  background: var(--Light-Contrast, #F5F7FB);
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--Light-Dark, #2D2D2D);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+
+}
+
+.seed-phrase-item::before {
+  /* content: ""; */
+  color: var(--Light-Gray, #808080);
+}
+
+ol {
+  list-style-type: none;
+  counter-reset: num;
+}
+
+ol li:before {
+  content: counter(num);
+  counter-increment: num;
+}
+
+.dark-theme .reg-container.dark-glow::before {
+  width: 800px;
+  height: 450px;
+  background-size: cover;
+  top: -155px;
+  max-width: 100vw;
+}
+
+.dark-theme .seed-phrase-item {
+  background: var(--dark-contrast);
+  color: var(--Light-Contrast);
 }
