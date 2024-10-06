@@ -1757,10 +1757,26 @@ hr {
   gap: 12px;
 }
 
-.divider__separator {
+/* .divider__separator {
+  flex: 1;
+  border-top: 1px solid rgb(203 213 225);
+} */
+
+.divider::before,
+.divider::after {
+  content: "";
   flex: 1;
   border-top: 1px solid rgb(203 213 225);
 }
+
+.divider.divider-left::before {
+  content: none;
+}
+
+.divider.divider-right::after {
+  content: none;
+}
+
 
 .login-buttons {
   width: 100%;
