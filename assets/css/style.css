@@ -2149,12 +2149,12 @@ hr {
   color: var(--Light-Gray, #808080);
 }
 
-ol {
+.seed-phrase-container {
   list-style-type: none;
   counter-reset: num;
 }
 
-ol li:before {
+.seed-phrase-container li:before {
   content: counter(num);
   counter-increment: num;
 }
