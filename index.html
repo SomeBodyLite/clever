@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="./assets/css/nice-select2.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <script defer src="./assets/js/theme-switcher.js"></script>
+    <script src="./assets/js/themeInit.js"></script>
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -31,6 +31,46 @@
     <meta name="theme-color" content="#ffffff" />
   </head>
   <body>
+    <div class="meta">
+      <div class="container">
+        <div
+          class="d-flex justify-content-between align-items-center gap-2 flex-column flex-md-row"
+        >
+          <div class="justify-content-center d-flex gap-3">
+            <div class="m-0">
+              <span class="text-dark fs-6 fw-normal font-family-Nagel">
+                CLV/USDT:
+              </span>
+              <span class="text-secondary fs-6 fw-normal font-family-Nagel">
+                1.00
+              </span>
+            </div>
+            <div class="m-0">
+              <span class="text-dark fs-6 fw-normal font-family-Nagel">
+                USDT/RUB:
+              </span>
+              <span class="text-secondary fs-6 fw-normal font-family-Nagel">
+                90.38
+              </span>
+            </div>
+          </div>
+          <div class="justify-content-center d-flex gap-3">
+            <a href="#" class="meta-item" role="button">
+              <img src="./assets/images/icons/code.svg" alt="Code" width="24" />
+              <span class="text-dark">Для разработчиков</span>
+            </a>
+            <a href="#" class="meta-item theme-switcher" role="button">
+              <img
+                src="./assets/images/icons/change-theme.svg"
+                alt="Change Theme"
+                width="24"
+              />
+              <span class="text-dark">Сменить тему</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
     <header class="header">
       <div class="container">
         <nav class="navbar">
@@ -48,10 +88,16 @@
               alt="Clever"
             />
           </a>
-          <div class="d-none align-items-center gap-2 ms-xl-5 d-lg-flex">
+          <div
+            class="d-none align-items-center gap-2 d-lg-flex bg-white p-2 rounded-1_25"
+          >
             <a href="./index.html" class="nav-item active" role="button">
               <img src="./assets/images/icons/home.svg" alt="Home" width="24" />
-              <span class="text-light">Мой кошелек</span>
+              <span class="text-light-gray">Кошелек</span>
+            </a>
+            <a href="./p2p.html" class="nav-item" role="button">
+              <img src="./assets/images/icons/p2p.svg" alt="p2p" width="24" />
+              <span class="text-light-gray">P2P</span>
             </a>
             <a href="./payments.html" class="nav-item" role="button">
               <img
@@ -59,19 +105,12 @@
                 alt="Folder"
                 width="24"
               />
-              <span class="text-light">Платежи</span>
+              <span class="text-light-gray">Реестр</span>
             </a>
-            <a href="#" class="nav-item" role="button">
-              <img
-                src="./assets/images/icons/messages.svg"
-                alt="messages"
-                width="24"
-              />
-              <span class="text-light">Поддержка</span>
-            </a>
+
             <a href="./faq.html" class="nav-item" role="button">
               <img src="./assets/images/icons/faq.svg" alt="Faq" width="24" />
-              <span class="text-light">FAQ</span>
+              <span class="text-light-gray">FAQ</span>
             </a>
             <a href="#" class="nav-item" role="button">
               <img
@@ -79,46 +118,14 @@
                 alt="Search"
                 width="24"
               />
-              <span class="text-light">Поиск</span>
+              <span class="text-light-gray">Поиск</span>
             </a>
           </div>
-          <div class="d-flex align-items-center gap-2 ms-auto">
-            <div class="justify-content-center d-none d-lg-flex flex-column">
-              <div class="m-0">
-                <span class="text-dark fs-6 fw-normal font-family-Nagel">
-                  CLV/USDT:
-                </span>
-                <span class="text-secondary fs-6 fw-normal font-family-Nagel">
-                  1.00
-                </span>
-              </div>
-              <div class="m-0">
-                <span class="text-dark fs-6 fw-normal font-family-Nagel">
-                  USDT/RUB:
-                </span>
-                <span class="text-secondary fs-6 fw-normal font-family-Nagel">
-                  90.38
-                </span>
-              </div>
-            </div>
-            <div class="d-flex align-items-center gap-2 ms-4">
-              <a href="#" class="nav-item theme-switcher" role="button">
-                <img
-                  src="./assets/images/icons/change-theme.svg"
-                  alt="Change Theme"
-                  width="24"
-                />
-              </a>
-              <a href="#" class="nav-item" role="button">
-                <img
-                  src="./assets/images/icons/code.svg"
-                  alt="Code"
-                  width="24"
-                />
-              </a>
+          <div class="d-flex align-items-center gap-2">
+            <div class="d-flex align-items-center gap-2">
               <!-- Если у notify-container есть класс new, то добавляется точка над кнопкой уведомлений, показывая что есть новые. -->
               <div class="dd-wrapper notify-container new">
-                <button class="nav-item dd">
+                <button class="nav-item dd rounded-circle">
                   <img
                     src="./assets/images/icons/notify.svg"
                     alt="Notifications"
@@ -359,20 +366,25 @@
                   </div>
                 </div>
               </div>
-              <!-- <a
-                href="./profile.html"
-                class="rounded-circle d-none d-lg-flex"
+              <a
+                href="#"
+                class="nav-item rounded-circle d-none d-lg-flex"
                 role="button"
               >
                 <img
-                  class="rounded-circle"
-                  src="./assets/images/profile-icon.png"
-                  alt="Profile"
-                  width="48"
+                  src="./assets/images/icons/messages.svg"
+                  alt="messages"
+                  width="24"
                 />
-              </a> -->
+              </a>
               <div class="dropdown custom-dropdown">
-                <button class="rounded-circle btn" data-bs-offset="10,20" data-bs-toggle="dropdown" aria-expanded="false" style="padding: 0;">
+                <button
+                  class="rounded-circle btn"
+                  data-bs-offset="10,20"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  style="padding: 0"
+                >
                   <img
                     class="rounded-circle"
                     src="./assets/images/profile-icon.png"
@@ -384,11 +396,11 @@
                   <li><a class="dropdown-item active" href="#">Аккаунт</a></li>
                   <li><a class="dropdown-item" href="#">Настройки</a></li>
                   <li><a class="dropdown-item" href="#">Ещё че то</a></li>
-                  <li><hr class="dropdown-divider"></li>
+                  <li><hr class="dropdown-divider" /></li>
                   <li><a class="dropdown-item" href="#">еще что то 2</a></li>
                 </ul>
               </div>
-              
+
               <a
                 href="./login.html"
                 class="btn btn-light-dark rounded-4 fw-500"
@@ -408,6 +420,10 @@
           <img src="./assets/images/icons/folder.svg" alt="Folder" width="24" />
           Реестр
         </a>
+        <!-- <a href="./payments.html" class="nav-item">
+          <img src="./assets/images/icons/p2p.svg" alt="p2p" width="24" />
+          P2P
+        </a> -->
         <a href="./index.html" class="nav-item active">
           <img src="./assets/images/icons/home.svg" alt="Home" width="24" />
           Кошелек
@@ -420,7 +436,11 @@
           />
           Поддержка
         </a>
-        <a href="./profile.html" class="nav-item d-none">
+        <a href="./p2p.html" class="nav-item">
+          <img src="./assets/images/icons/p2p.svg" alt="p2p" width="24" />
+          P2P
+        </a>
+        <!-- <a href="./profile.html" class="nav-item d-none">
           <img
             class="rounded-circle"
             src="./assets/images/profile-icon.png"
@@ -435,7 +455,7 @@
             style="background: #808080; border: none; height: 24px; width: 24px"
           ></span>
           Войти
-        </a>
+        </a> -->
       </div>
     </header>
     <section class="section-offset section-first">
@@ -443,13 +463,13 @@
         <div class="section-content">
           <h1 class="title pb-4">Ваш кошелек</h1>
           <div class="waller-container dark-glow">
-            <div class="block first">
+            <div class="block first d-flex flex-column">
               <h6 class="fw-medium" style="margin-bottom: 1.25rem">
                 Основной кошелек
               </h6>
               <div
                 class="d-flex align-items-center gap-2"
-                style="margin-bottom: 2rem"
+                style="margin-bottom: 0.75rem"
               >
                 <img src="./assets/images/icons/logo-icon.svg" alt="" />
                 <div class="d-flex align-items-end gap-1">
@@ -457,47 +477,62 @@
                   <span class="text-light-gray">CLV</span>
                 </div>
               </div>
+              <div class="d-flex gap-2">
+                <span class="badge fw-normal fs-6 bg-dark-dark" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Перевести средства" data-bs-original-title="Перевести средства"
+                  >812.54 ₽</span
+                >
+                <span class="badge fw-normal fs-6 bg-dark-dark"
+                  >8.00 $</span
+                >
+              </div>
               <div
-                class="d-flex align-items-center justify-content-between gap-2 wallet-actions"
+                class="gap-2 wallet-actions mt-lg-auto mt-4"
               >
                 <button
-                  class="btn btn-light-dark connect dark-button"
+                  class="btn btn-light connect dark-button"
                   data-modal="modal1"
                 >
                   <img
+                    class="filter-black"
                     src="./assets/images/icons/arrow-down-left.svg"
                     width="28"
                     alt=""
                   />
+                 <span class="text-light-dark">Получить</span>
                 </button>
                 <button
-                  class="btn btn-light-dark connect dark-button"
+                  class="btn btn-light connect dark-button"
                   data-modal="modal2"
                 >
                   <img
+                    class="filter-black"
                     src="./assets/images/icons/arrow-up-right.svg"
                     width="28"
                     alt=""
                   />
+                  <span class="text-light-dark">Отправить</span>
                 </button>
                 <button
-                  class="btn btn-light-dark connect dark-button"
+                  class="btn btn-light connect dark-button"
                   data-modal="modal4"
                 >
-                  <img src="./assets/images/icons/send.svg" width="28" alt="" />
+                  <img class="filter-black" src="./assets/images/icons/send.svg" width="24" alt="" />
+                  <span class="text-light-dark">Вывести</span>
                 </button>
-                <button class="btn btn-light-dark dark-button">
+                <button class="btn btn-light dark-button">
                   <img
+                    class="filter-black"
                     src="./assets/images/icons/history.svg"
-                    width="28"
+                    width="24"
                     alt=""
                   />
+                  <span class="text-light-dark">История</span>
                 </button>
               </div>
             </div>
             <div class="block bg-white p-4 d-flex flex-column">
               <p
-                class="text-light-gray fw-medium"
+                class="text-light-gray fw-normal"
                 style="margin-bottom: 1.25rem"
               >
                 USDT TRC
@@ -525,11 +560,11 @@
                   <span class="text-light-gray">CLV</span>
                 </div>
               </div>
-              <div class="grid-line gap-2 mt-auto">
+              <div class="d-flex flex-column gap-2 mt-auto">
                 <a
                   name=""
                   id=""
-                  class="btn btn-gray fs-6 fw-medium"
+                  class="btn btn-gray fs-6 fw-normal"
                   style="padding: 1rem"
                   href="#"
                   role="button"
@@ -544,7 +579,7 @@
                 <a
                   name=""
                   id=""
-                  class="btn btn-gray fs-6 fw-medium"
+                  class="btn btn-gray fs-6 fw-normal"
                   style="padding: 1rem"
                   href="#"
                   role="button"
@@ -559,10 +594,10 @@
             </div>
             <div class="block bg-white p-4 d-flex flex-column">
               <p
-                class="text-light-gray fw-medium"
+                class="text-light-gray fw-normal"
                 style="margin-bottom: 1.25rem"
               >
-                USDT TRC
+                USDT ERC
               </p>
               <div
                 class="d-flex align-items-center gap-2"
@@ -587,11 +622,11 @@
                   <span class="text-light-gray">CLV</span>
                 </div>
               </div>
-              <div class="grid-line gap-2 mt-auto">
+              <div class="d-flex flex-column gap-2 mt-auto">
                 <a
                   name=""
                   id=""
-                  class="btn btn-gray fs-6 fw-medium"
+                  class="btn btn-gray fs-6 fw-normal"
                   style="padding: 1rem"
                   href="#"
                   role="button"
@@ -606,7 +641,7 @@
                 <a
                   name=""
                   id=""
-                  class="btn btn-gray fs-6 fw-medium"
+                  class="btn btn-gray fs-6 fw-normal"
                   style="padding: 1rem"
                   href="#"
                   role="button"
@@ -701,7 +736,7 @@
                     width="20"
                     alt=""
                   />
-                  <span>Обновить</span>
+                  <span class="text-light-dark">Обновить</span>
                 </button>
               </div>
             </div>
@@ -1081,7 +1116,7 @@
         </div>
       </div>
     </section>
-    <div class="position-fixed" style="top: 100px; right: 20px">
+    <div class="position-fixed" style="top: 150px; right: 20px">
       <button class="btn btn-dark connect" data-modal="modal1">m1</button>
       <button class="btn btn-dark connect" data-modal="modal2">m2</button>
       <button class="btn btn-dark connect" data-modal="modal3">m3</button>
@@ -1457,6 +1492,7 @@
       </div>
     </div>
     <footer></footer>
+    <script src="./assets/js/theme-switcher.js"></script>
     <script src="./assets/js/bootstrap.bundle.min.js"></script>
     <script src="./assets/js/nice-select2.js"></script>
     <script src="./assets/js/custom-modals.js"></script>
@@ -1469,6 +1505,19 @@
           placeholder: "Период",
         }
       );
+    </script>
+    <!-- <script>
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    </script> -->
+    <script>
+      // Дебагер
+      document.addEventListener("keydown", function(event) {
+        if (event.keyCode === 119) {
+          event.preventDefault();
+          debugger;
+        }
+      });
     </script>
   </body>
 </html>

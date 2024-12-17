@@ -1,0 +1,1787 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clever - P2P</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/nice-select2.css" />
+    <link rel="stylesheet" href="./assets/css/datatables.min.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script src="./assets/js/themeInit.js"></script>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./favicon-16x16.png"
+    />
+    <link rel="manifest" href="./site.webmanifest" />
+    <link rel="mask-icon" href="./safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#2b5797" />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
+  <body>
+    <div class="meta">
+      <div class="container">
+        <div
+          class="d-flex justify-content-between align-items-center gap-2 flex-column flex-md-row"
+        >
+          <div class="justify-content-center d-flex gap-3">
+            <div class="m-0">
+              <span class="text-dark fs-6 fw-normal font-family-Nagel">
+                CLV/USDT:
+              </span>
+              <span class="text-secondary fs-6 fw-normal font-family-Nagel">
+                1.00
+              </span>
+            </div>
+            <div class="m-0">
+              <span class="text-dark fs-6 fw-normal font-family-Nagel">
+                USDT/RUB:
+              </span>
+              <span class="text-secondary fs-6 fw-normal font-family-Nagel">
+                90.38
+              </span>
+            </div>
+          </div>
+          <div class="justify-content-center d-flex gap-3">
+            <a href="#" class="meta-item" role="button">
+              <img src="./assets/images/icons/code.svg" alt="Code" width="24" />
+              <span class="text-dark">Для разработчиков</span>
+            </a>
+            <a href="#" class="meta-item theme-switcher" role="button">
+              <img
+                src="./assets/images/icons/change-theme.svg"
+                alt="Change Theme"
+                width="24"
+              />
+              <span class="text-dark">Сменить тему</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <header class="header">
+      <div class="container">
+        <nav class="navbar">
+          <a class="navbar-brand d-flex align-items-center" href="./index.html">
+            <img
+              class="logo"
+              src="./assets/images/logo.svg"
+              width="148"
+              alt="Clever"
+            />
+            <img
+              class="logo-dark"
+              src="./assets/images/logo-light.svg"
+              width="148"
+              alt="Clever"
+            />
+          </a>
+          <div
+            class="d-none align-items-center gap-2 d-lg-flex bg-white p-2 rounded-1_25"
+          >
+            <a href="./index.html" class="nav-item" role="button">
+              <img src="./assets/images/icons/home.svg" alt="Home" width="24" />
+              <span class="text-light-gray">Кошелек</span>
+            </a>
+            <a href="./p2p.html" class="nav-item active" role="button">
+              <img src="./assets/images/icons/p2p.svg" alt="p2p" width="24" />
+              <span class="text-light-gray">P2P</span>
+            </a>
+            <a href="./payments.html" class="nav-item" role="button">
+              <img
+                src="./assets/images/icons/folder.svg"
+                alt="Folder"
+                width="24"
+              />
+              <span class="text-light-gray">Реестр</span>
+            </a>
+
+            <a href="./faq.html" class="nav-item" role="button">
+              <img src="./assets/images/icons/faq.svg" alt="Faq" width="24" />
+              <span class="text-light-gray">FAQ</span>
+            </a>
+            <a href="#" class="nav-item" role="button">
+              <img
+                src="./assets/images/icons/search.svg"
+                alt="Search"
+                width="24"
+              />
+              <span class="text-light-gray">Поиск</span>
+            </a>
+          </div>
+          <div class="d-flex align-items-center gap-2">
+            <div class="d-flex align-items-center gap-2">
+              <!-- Если у notify-container есть класс new, то добавляется точка над кнопкой уведомлений, показывая что есть новые. -->
+              <div class="dd-wrapper notify-container new">
+                <button class="nav-item dd rounded-circle">
+                  <img
+                    src="./assets/images/icons/notify.svg"
+                    alt="Notifications"
+                    width="24"
+                  />
+                </button>
+                <div class="dd-menu notifications">
+                  <div class="notifications-header">
+                    <div class="d-flex align-items-center gap-2">
+                      <h5 class="notifications-title m-0">Оповещения</h5>
+                      <span
+                        class="badge bg-light-contrast text-light-dark fw-normal"
+                        >12</span
+                      >
+                    </div>
+                    <button class="btn" onclick="closeAllDropdowns()">
+                      <img
+                        src="./assets/images/icons/close.svg"
+                        width="20"
+                        alt=""
+                      />
+                    </button>
+                  </div>
+                  <div class="notifications-body">
+                    <div class="notify-item">
+                      <div class="position-relative">
+                        <img
+                          src="./assets/images/icons/usdt.svg"
+                          width="40"
+                          alt="USDT"
+                        />
+                        <img
+                          class="position-absolute"
+                          src="./assets/images/icons/tron.svg"
+                          width="18"
+                          alt="TRON"
+                          style="right: -6px; top: -6px"
+                        />
+                      </div>
+                      <div class="notify-info">
+                        <h4 class="title lh-1">Пополнение USDT (TRC)</h4>
+                        <time datetime="2021-12-01" class="text-secondary lh-1"
+                          >3 ч. назад</time
+                        >
+                        <span
+                          class="badge bg-light-contrast text-green-alert fs-6 fw-medium"
+                          >240.00 USDT</span
+                        >
+                      </div>
+                    </div>
+                    <div class="notify-item">
+                      <div class="position-relative">
+                        <img
+                          src="./assets/images/icons/usdt.svg"
+                          width="40"
+                          alt="USDT"
+                        />
+                        <img
+                          class="position-absolute"
+                          src="./assets/images/icons/eth.svg"
+                          width="18"
+                          alt="ETH"
+                          style="right: -6px; top: -6px"
+                        />
+                      </div>
+                      <div class="notify-info">
+                        <h4 class="title lh-1">Пополнение USDT (ERC)</h4>
+                        <time datetime="2021-12-01" class="text-secondary lh-1"
+                          >3 ч. назад</time
+                        >
+                        <span
+                          class="badge bg-light-contrast text-green-alert fs-6 fw-medium"
+                          >240.00 USDT</span
+                        >
+                      </div>
+                    </div>
+                    <div class="notify-item">
+                      <div class="position-relative">
+                        <img
+                          src="./assets/images/icons/logo-icon.svg"
+                          width="40"
+                          alt=""
+                        />
+                      </div>
+                      <div class="notify-info">
+                        <h4 class="title lh-1">Покупка CLV</h4>
+                        <time datetime="2021-12-01" class="text-secondary lh-1"
+                          >3 ч. назад</time
+                        >
+                        <span
+                          class="badge bg-light-contrast text-green-alert fs-6 fw-medium"
+                          >240.00 USDT</span
+                        >
+                      </div>
+                    </div>
+                    <div class="notify-item">
+                      <div class="position-relative">
+                        <img
+                          src="./assets/images/icons/usdt.svg"
+                          width="40"
+                          alt="USDT"
+                        />
+                        <img
+                          class="position-absolute"
+                          src="./assets/images/icons/tron.svg"
+                          width="18"
+                          alt="TRON"
+                          style="right: -6px; top: -6px"
+                        />
+                      </div>
+                      <div class="notify-info">
+                        <h4 class="title lh-1">Пополнение USDT (TRC)</h4>
+                        <time datetime="2021-12-01" class="text-secondary lh-1"
+                          >3 ч. назад</time
+                        >
+                        <span
+                          class="badge bg-light-contrast text-green-alert fs-6 fw-medium"
+                          >240.00 USDT</span
+                        >
+                      </div>
+                    </div>
+                    <div class="notify-item">
+                      <div class="position-relative">
+                        <img
+                          src="./assets/images/icons/usdt.svg"
+                          width="40"
+                          alt="USDT"
+                        />
+                        <img
+                          class="position-absolute"
+                          src="./assets/images/icons/eth.svg"
+                          width="18"
+                          alt="ETH"
+                          style="right: -6px; top: -6px"
+                        />
+                      </div>
+                      <div class="notify-info">
+                        <h4 class="title lh-1">Пополнение USDT (ERC)</h4>
+                        <time datetime="2021-12-01" class="text-secondary lh-1"
+                          >3 ч. назад</time
+                        >
+                        <span
+                          class="badge bg-light-contrast text-green-alert fs-6 fw-medium"
+                          >240.00 USDT</span
+                        >
+                      </div>
+                    </div>
+                    <div class="notify-item">
+                      <div class="position-relative">
+                        <img
+                          src="./assets/images/icons/logo-icon.svg"
+                          width="40"
+                          alt=""
+                        />
+                      </div>
+                      <div class="notify-info">
+                        <h4 class="title lh-1">Покупка CLV</h4>
+                        <time datetime="2021-12-01" class="text-secondary lh-1"
+                          >3 ч. назад</time
+                        >
+                        <span
+                          class="badge bg-light-contrast text-green-alert fs-6 fw-medium"
+                          >240.00 USDT</span
+                        >
+                      </div>
+                    </div>
+                    <div class="notify-item">
+                      <div class="position-relative">
+                        <img
+                          src="./assets/images/icons/usdt.svg"
+                          width="40"
+                          alt="USDT"
+                        />
+                        <img
+                          class="position-absolute"
+                          src="./assets/images/icons/tron.svg"
+                          width="18"
+                          alt="TRON"
+                          style="right: -6px; top: -6px"
+                        />
+                      </div>
+                      <div class="notify-info">
+                        <h4 class="title lh-1">Пополнение USDT (TRC)</h4>
+                        <time datetime="2021-12-01" class="text-secondary lh-1"
+                          >3 ч. назад</time
+                        >
+                        <span
+                          class="badge bg-light-contrast text-green-alert fs-6 fw-medium"
+                          >240.00 USDT</span
+                        >
+                      </div>
+                    </div>
+                    <div class="notify-item">
+                      <div class="position-relative">
+                        <img
+                          src="./assets/images/icons/usdt.svg"
+                          width="40"
+                          alt="USDT"
+                        />
+                        <img
+                          class="position-absolute"
+                          src="./assets/images/icons/eth.svg"
+                          width="18"
+                          alt="ETH"
+                          style="right: -6px; top: -6px"
+                        />
+                      </div>
+                      <div class="notify-info">
+                        <h4 class="title lh-1">Пополнение USDT (ERC)</h4>
+                        <time datetime="2021-12-01" class="text-secondary lh-1"
+                          >3 ч. назад</time
+                        >
+                        <span
+                          class="badge bg-light-contrast text-green-alert fs-6 fw-medium"
+                          >240.00 USDT</span
+                        >
+                      </div>
+                    </div>
+                    <div class="notify-item">
+                      <div class="position-relative">
+                        <img
+                          src="./assets/images/icons/logo-icon.svg"
+                          width="40"
+                          alt=""
+                        />
+                      </div>
+                      <div class="notify-info">
+                        <h4 class="title lh-1">Покупка CLV</h4>
+                        <time datetime="2021-12-01" class="text-secondary lh-1"
+                          >3 ч. назад</time
+                        >
+                        <span
+                          class="badge bg-light-contrast text-green-alert fs-6 fw-medium"
+                          >240.00 USDT</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- <a
+                href="./profile.html"
+                class="rounded-circle d-none d-lg-flex"
+                role="button"
+              >
+                <img
+                  class="rounded-circle"
+                  src="./assets/images/profile-icon.png"
+                  alt="Profile"
+                  width="48"
+                />
+              </a> -->
+              <a
+                href="#"
+                class="nav-item rounded-circle d-none d-lg-flex"
+                role="button"
+              >
+                <img
+                  src="./assets/images/icons/messages.svg"
+                  alt="messages"
+                  width="24"
+                />
+              </a>
+              <div class="dropdown custom-dropdown">
+                <button
+                  class="rounded-circle btn"
+                  data-bs-offset="10,20"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  style="padding: 0"
+                >
+                  <img
+                    class="rounded-circle"
+                    src="./assets/images/profile-icon.png"
+                    alt="Profile"
+                    width="48"
+                  />
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li><a class="dropdown-item active" href="#">Аккаунт</a></li>
+                  <li><a class="dropdown-item" href="#">Настройки</a></li>
+                  <li><a class="dropdown-item" href="#">Ещё че то</a></li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li><a class="dropdown-item" href="#">еще что то 2</a></li>
+                </ul>
+              </div>
+
+              <a
+                href="./login.html"
+                class="btn btn-light-dark rounded-4 fw-500"
+                style="padding: 0.68rem 1.5rem"
+                >Войти в аккаунт</a
+              >
+            </div>
+          </div>
+        </nav>
+      </div>
+      <div class="mobile-navbar d-grid d-lg-none">
+        <a href="./faq.html" class="nav-item">
+          <img src="./assets/images/icons/faq.svg" alt="FAQ" width="24" />
+          FAQ
+        </a>
+        <a href="./payments.html" class="nav-item">
+          <img src="./assets/images/icons/folder.svg" alt="Folder" width="24" />
+          Реестр
+        </a>
+        <a href="./index.html" class="nav-item active">
+          <img src="./assets/images/icons/home.svg" alt="Home" width="24" />
+          Кошелек
+        </a>
+        <a href="#" class="nav-item">
+          <img
+            src="./assets/images/icons/messages.svg"
+            alt="messages"
+            width="24"
+          />
+          Поддержка
+        </a>
+        <a href="./p2p.html" class="nav-item">
+          <img src="./assets/images/icons/p2p.svg" alt="p2p" width="24" />
+          P2P
+        </a>
+        <!-- <a href="./profile.html" class="nav-item d-none">
+          <img
+            class="rounded-circle"
+            src="./assets/images/profile-icon.png"
+            alt="Profile"
+            width="48"
+          />
+          Профиль
+        </a>
+        <a href="./login.html" class="nav-item">
+          <span
+            class="rounded-circle"
+            style="background: #808080; border: none; height: 24px; width: 24px"
+          ></span>
+          Войти
+        </a> -->
+      </div>
+    </header>
+    <section class="section-offset">
+      <div class="container">
+        <div class="section-content">
+          <div class="bg-white rounded-5" style="padding: 2.75rem">
+            <div
+              class="d-flex justify-content-between align-items-center"
+              style="margin-bottom: 1.75rem"
+            >
+              <h2 class="fw-medium m-0">Активные сделки</h2>
+            </div>
+            <table id="myTrades" class="table data-table">
+              <thead>
+                <tr>
+                  <th data-dt-order="disable">
+                    <span class="table-title">Продавец</span>
+                  </th>
+                  <th><span class="table-title">Предложение</span></th>
+
+                  <th data-dt-order="disable">
+                    <span class="table-title">Способ оплаты</span>
+                  </th>
+                  <th data-dt-order="disable"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="seller">
+                      <img
+                        class="seller__img"
+                        src="./assets/images/profile-icon.png"
+                        alt=""
+                      />
+                      <div class="seller__info">
+                        <div class="seller__name">Username</div>
+                        <div class="seller__salles">1 259 сделок</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex align-items-center gap-2">
+                      <div class="price">
+                        <div class="position-relative">
+                          <img
+                            src="./assets/images/icons/usdt.svg"
+                            width="24"
+                            alt="USDT"
+                          />
+                          <img
+                            class="position-absolute"
+                            src="./assets/images/icons/tron.svg"
+                            width="12"
+                            alt="TRON"
+                            style="right: -3px; top: -3px"
+                          />
+                        </div>
+                        1 556 USDT
+                      </div>
+                      <img
+                        class="gray-icons"
+                        src="./assets/images/icons/arrow-right.svg"
+                        alt=""
+                      />
+                      <div class="limit">154 000₽</div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="payment-var">
+                      <img src="./assets/images/icons/t-bank-icon.svg" alt="" />
+                      Тинькофф
+                    </div>
+                  </td>
+                  <td align="right">
+                    <!-- Если у table-btn есть класс new - то отображается точечка -->
+                    <button class="btn btn-light rounded-0_75 table-btn new">
+                      <img
+                        class="filter-black"
+                        src="./assets/images/icons/chat.svg"
+                        alt=""
+                      />
+                      Чат с продавцом
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section-offset">
+      <div class="container">
+        <div class="section-content">
+          <div class="bg-white rounded-5" style="padding: 2.75rem">
+            <div
+              class="d-flex justify-content-between align-items-center"
+              style="margin-bottom: 1.75rem"
+            >
+              <h2 class="fw-medium m-0">Ваши предложения</h2>
+            </div>
+            <table id="mySuggestions" class="table data-table">
+              <thead>
+                <tr>
+                  <th data-dt-order="disable">
+                    <span class="table-title">Продавец</span>
+                  </th>
+                  <th><span class="table-title">Цена</span></th>
+                  <th data-dt-order="disable">
+                    <span class="table-title">Лимиты</span>
+                  </th>
+                  <th data-dt-order="disable">
+                    <span class="table-title">Способ оплаты</span>
+                  </th>
+                  <th data-dt-order="disable"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="seller">
+                      <img
+                        class="seller__img"
+                        src="./assets/images/profile-icon.png"
+                        alt=""
+                      />
+                      <div class="seller__info">
+                        <div class="seller__name">Username</div>
+                        <div class="seller__salles">1 259 сделок</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td><div class="price">102 ₽ / 1 USDT</div></td>
+                  <td><div class="limit">10 000 - 125 000 ₽</div></td>
+                  <td>
+                    <div class="payment-var">
+                      <img src="./assets/images/icons/t-bank-icon.svg" alt="" />
+                      Тинькофф
+                    </div>
+                  </td>
+                  <td align="right">
+                    <button class="btn btn-light rounded-0_75 table-btn">
+                      Сделки (1)
+                    </button>
+                    <button
+                      class="btn btn-danger-custom rounded-0_75 table-btn"
+                    >
+                      Удалить
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="seller">
+                      <img
+                        class="seller__img"
+                        src="./assets/images/profile-icon.png"
+                        alt=""
+                      />
+                      <div class="seller__info">
+                        <div class="seller__name">Username</div>
+                        <div class="seller__salles">1 259 сделок</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td><div class="price">102 ₽ / 1 USDT</div></td>
+                  <td><div class="limit">10 000 - 125 000 ₽</div></td>
+                  <td>
+                    <div class="payment-var">
+                      <img src="./assets/images/icons/t-bank-icon.svg" alt="" />
+                      Тинькофф
+                    </div>
+                  </td>
+                  <td align="right">
+                    <button class="btn btn-light rounded-0_75 table-btn">
+                      Сделки (1)
+                    </button>
+                    <button
+                      class="btn btn-danger-custom rounded-0_75 table-btn"
+                    >
+                      Удалить
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section-offset">
+      <div class="container">
+        <div class="section-content">
+          <div class="bg-white rounded-5" style="padding: 2.75rem">
+            <div
+              class="d-flex justify-content-between align-items-center"
+              style="margin-bottom: 1.75rem"
+            >
+              <h2 class="fw-medium m-0">P2P</h2>
+              <button
+                class="btn btn-light-dark rounded-0_75 connect"
+                data-modal="modal10"
+              >
+                <img src="./assets/images/icons/plus.svg" alt="" />
+                Создать предложение
+              </button>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <div class="d-flex gap-2">
+                <div class="radio-label">
+                  <input
+                    type="radio"
+                    class="btn-check"
+                    id="btn-radio"
+                    checked
+                    autocomplete="off"
+                    name="tr-type"
+                  />
+                  <label
+                    class="btn btn-gray fw-normal px-3 rounded-5"
+                    for="btn-radio"
+                    >Купить</label
+                  >
+                  <input
+                    type="radio"
+                    class="btn-check"
+                    id="btn-radio-2"
+                    autocomplete="off"
+                    name="tr-type"
+                  />
+                  <label
+                    class="btn btn-gray fw-normal px-3 rounded-5"
+                    for="btn-radio-2"
+                    >Продать</label
+                  >
+                </div>
+                <select
+                  name="cyrrency"
+                  id="cyrrency"
+                  class="settings__select searchable"
+                  data-placeholder="Криптовалюта"
+                >
+                  <option value="all">ETH</option>
+                  <option value="day">За день</option>
+                  <option value="week">За неделю</option>
+                  <option value="month">За месяц</option>
+                </select>
+                <select
+                  name="wallet"
+                  id="wallet"
+                  class="settings__select"
+                  data-placeholder="Способ оплаты"
+                >
+                  <option value="all">СБОЛ</option>
+                  <option value="day">ТИНЬ</option>
+                  <option value="week">Еще</option>
+                  <option value="month">Еще 2</option>
+                </select>
+              </div>
+              <div class="d-flex">
+                <label class="search-label">
+                  <input
+                    class="search-label__input"
+                    type="text"
+                    placeholder="Кол-во покупки"
+                  />
+                  <!-- <button class="search-label__button">RUB</button> -->
+                  <select class="search-label__button" name="currency1" id="">
+                    <option value="RUB">RUB</option>
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                  </select>
+                </label>
+              </div>
+            </div>
+            <table id="myTable" class="table data-table">
+              <thead>
+                <tr>
+                  <th data-dt-order="disable">
+                    <span class="table-title">Продавец</span>
+                  </th>
+                  <th><span class="table-title">Цена</span></th>
+                  <th data-dt-order="disable">
+                    <span class="table-title">Лимиты</span>
+                  </th>
+                  <th data-dt-order="disable">
+                    <span class="table-title">Способ оплаты</span>
+                  </th>
+                  <th data-dt-order="disable"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="seller">
+                      <img
+                        class="seller__img"
+                        src="./assets/images/profile-icon.png"
+                        alt=""
+                      />
+                      <div class="seller__info">
+                        <div class="seller__name">Username</div>
+                        <div class="seller__salles">1 259 сделок</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td><div class="price">102 ₽ / 1 USDT</div></td>
+                  <td><div class="limit">10 000 - 125 000 ₽</div></td>
+                  <td>
+                    <div class="payment-var">
+                      <img src="./assets/images/icons/t-bank-icon.svg" alt="" />
+                      Тинькофф
+                    </div>
+                  </td>
+                  <td align="right">
+                    <button class="btn btn-light-dark rounded-0_75 table-btn">
+                      Купить
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="seller">
+                      <img
+                        class="seller__img"
+                        src="./assets/images/profile-icon.png"
+                        alt=""
+                      />
+                      <div class="seller__info">
+                        <div class="seller__name">Username</div>
+                        <div class="seller__salles">1 259 сделок</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td><div class="price">101 ₽ / 1 USDT</div></td>
+                  <td><div class="limit">10 000 - 125 000 ₽</div></td>
+                  <td>
+                    <div class="payment-var">
+                      <img src="./assets/images/icons/t-bank-icon.svg" alt="" />
+                      Тинькофф
+                    </div>
+                  </td>
+                  <td align="right">
+                    <button class="btn btn-light-dark rounded-0_75 table-btn">
+                      Купить
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="seller">
+                      <img
+                        class="seller__img"
+                        src="./assets/images/profile-icon.png"
+                        alt=""
+                      />
+                      <div class="seller__info">
+                        <div class="seller__name">Username</div>
+                        <div class="seller__salles">1 259 сделок</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td><div class="price">100 ₽ / 1 USDT</div></td>
+                  <td><div class="limit">10 000 - 125 000 ₽</div></td>
+                  <td>
+                    <div class="payment-var">
+                      <img src="./assets/images/icons/t-bank-icon.svg" alt="" />
+                      Тинькофф
+                    </div>
+                  </td>
+                  <td align="right">
+                    <button class="btn btn-light-dark rounded-0_75 table-btn">
+                      Купить
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="seller">
+                      <img
+                        class="seller__img"
+                        src="./assets/images/profile-icon.png"
+                        alt=""
+                      />
+                      <div class="seller__info">
+                        <div class="seller__name">Username</div>
+                        <div class="seller__salles">1 259 сделок</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td><div class="price">102 ₽ / 1 USDT</div></td>
+                  <td><div class="limit">10 000 - 125 000 ₽</div></td>
+                  <td>
+                    <div class="payment-var">
+                      <img src="./assets/images/icons/t-bank-icon.svg" alt="" />
+                      Тинькофф
+                    </div>
+                  </td>
+                  <td align="right">
+                    <button class="btn btn-light-dark rounded-0_75 table-btn">
+                      Купить
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="seller">
+                      <img
+                        class="seller__img"
+                        src="./assets/images/profile-icon.png"
+                        alt=""
+                      />
+                      <div class="seller__info">
+                        <div class="seller__name">Username</div>
+                        <div class="seller__salles">1 259 сделок</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td><div class="price">101 ₽ / 1 USDT</div></td>
+                  <td><div class="limit">10 000 - 125 000 ₽</div></td>
+                  <td>
+                    <div class="payment-var">
+                      <img src="./assets/images/icons/t-bank-icon.svg" alt="" />
+                      Тинькофф
+                    </div>
+                  </td>
+                  <td align="right">
+                    <button class="btn btn-light-dark rounded-0_75 table-btn">
+                      Купить
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="seller">
+                      <img
+                        class="seller__img"
+                        src="./assets/images/profile-icon.png"
+                        alt=""
+                      />
+                      <div class="seller__info">
+                        <div class="seller__name">Username</div>
+                        <div class="seller__salles">1 259 сделок</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td><div class="price">100 ₽ / 1 USDT</div></td>
+                  <td><div class="limit">10 000 - 125 000 ₽</div></td>
+                  <td>
+                    <div class="payment-var">
+                      <img src="./assets/images/icons/t-bank-icon.svg" alt="" />
+                      Тинькофф
+                    </div>
+                  </td>
+                  <td align="right">
+                    <button class="btn btn-light-dark rounded-0_75 table-btn">
+                      Купить
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="seller">
+                      <img
+                        class="seller__img"
+                        src="./assets/images/profile-icon.png"
+                        alt=""
+                      />
+                      <div class="seller__info">
+                        <div class="seller__name">Username</div>
+                        <div class="seller__salles">1 259 сделок</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td><div class="price">102 ₽ / 1 USDT</div></td>
+                  <td><div class="limit">10 000 - 125 000 ₽</div></td>
+                  <td>
+                    <div class="payment-var">
+                      <img src="./assets/images/icons/t-bank-icon.svg" alt="" />
+                      Тинькофф
+                    </div>
+                  </td>
+                  <td align="right">
+                    <button class="btn btn-light-dark rounded-0_75 table-btn">
+                      Купить
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="seller">
+                      <img
+                        class="seller__img"
+                        src="./assets/images/profile-icon.png"
+                        alt=""
+                      />
+                      <div class="seller__info">
+                        <div class="seller__name">Username</div>
+                        <div class="seller__salles">1 259 сделок</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td><div class="price">101 ₽ / 1 USDT</div></td>
+                  <td><div class="limit">10 000 - 125 000 ₽</div></td>
+                  <td>
+                    <div class="payment-var">
+                      <img src="./assets/images/icons/t-bank-icon.svg" alt="" />
+                      Тинькофф
+                    </div>
+                  </td>
+                  <td align="right">
+                    <button class="btn btn-light-dark rounded-0_75 table-btn">
+                      Купить
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="seller">
+                      <img
+                        class="seller__img"
+                        src="./assets/images/profile-icon.png"
+                        alt=""
+                      />
+                      <div class="seller__info">
+                        <div class="seller__name">Username</div>
+                        <div class="seller__salles">1 259 сделок</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td><div class="price">100 ₽ / 1 USDT</div></td>
+                  <td><div class="limit">10 000 - 125 000 ₽</div></td>
+                  <td>
+                    <div class="payment-var">
+                      <img src="./assets/images/icons/t-bank-icon.svg" alt="" />
+                      Тинькофф
+                    </div>
+                  </td>
+                  <td align="right">
+                    <button class="btn btn-light-dark rounded-0_75 table-btn">
+                      Купить
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="seller">
+                      <img
+                        class="seller__img"
+                        src="./assets/images/profile-icon.png"
+                        alt=""
+                      />
+                      <div class="seller__info">
+                        <div class="seller__name">Username</div>
+                        <div class="seller__salles">1 259 сделок</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td><div class="price">102 ₽ / 1 USDT</div></td>
+                  <td><div class="limit">10 000 - 125 000 ₽</div></td>
+                  <td>
+                    <div class="payment-var">
+                      <img src="./assets/images/icons/t-bank-icon.svg" alt="" />
+                      Тинькофф
+                    </div>
+                  </td>
+                  <td align="right">
+                    <button class="btn btn-light-dark rounded-0_75 table-btn">
+                      Купить
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="seller">
+                      <img
+                        class="seller__img"
+                        src="./assets/images/profile-icon.png"
+                        alt=""
+                      />
+                      <div class="seller__info">
+                        <div class="seller__name">Username</div>
+                        <div class="seller__salles">1 259 сделок</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td><div class="price">101 ₽ / 1 USDT</div></td>
+                  <td><div class="limit">10 000 - 125 000 ₽</div></td>
+                  <td>
+                    <div class="payment-var">
+                      <img src="./assets/images/icons/t-bank-icon.svg" alt="" />
+                      Тинькофф
+                    </div>
+                  </td>
+                  <td align="right">
+                    <button class="btn btn-light-dark rounded-0_75 table-btn">
+                      Купить
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="seller">
+                      <img
+                        class="seller__img"
+                        src="./assets/images/profile-icon.png"
+                        alt=""
+                      />
+                      <div class="seller__info">
+                        <div class="seller__name">Username</div>
+                        <div class="seller__salles">1 259 сделок</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td><div class="price">100 ₽ / 1 USDT</div></td>
+                  <td><div class="limit">10 000 - 125 000 ₽</div></td>
+                  <td>
+                    <div class="payment-var">
+                      <img src="./assets/images/icons/t-bank-icon.svg" alt="" />
+                      Тинькофф
+                    </div>
+                  </td>
+                  <td align="right">
+                    <button class="btn btn-light-dark rounded-0_75 table-btn">
+                      Купить
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div
+      class="position-fixed d-flex gap-1"
+      id="modals-buttons"
+      style="top: 150px; right: 20px; z-index: 99"
+    ></div>
+    <div class="custom-modal-overlay"></div>
+    <div class="custom-dd-overlay"></div>
+    <div class="custom-modal" id="modal5" style="width: 100%">
+      <div class="custom-modal-header">
+        <span>Перевод средств</span>
+        <button class="btn" id="close">
+          <img src="./assets/images/icons/close.svg" alt="" />
+        </button>
+      </div>
+      <div class="custom-modal-body">
+        <div class="d-flex gap-4 flex-column flex-sm-row">
+          <div class="d-flex flex-column gap-4 col-sm-6 col-12">
+            <div class="seller">
+              <img
+                class="seller__img"
+                src="./assets/images/profile-icon.png"
+                alt=""
+              />
+              <div class="seller__info">
+                <div class="seller__name">Username</div>
+                <div class="seller__salles">1 259 сделок</div>
+              </div>
+            </div>
+            <div class="d-flex flex-column gap-4">
+              <div class="d-flex align-items-center gap-3">
+                <div class="d-flex flex-column gap-1">
+                  <p class="text-light-gray mb-0">Цена</p>
+                  <p class="fs-5 fw-normal mb-0">102 ₽ / 1 USDT</p>
+                </div>
+                <div class="d-flex flex-column gap-1">
+                  <p class="text-light-gray mb-0">Лимиты</p>
+                  <p class="fs-5 fw-normal mb-0">10 000 - 125 000 ₽</p>
+                </div>
+              </div>
+              <div class="d-flex gap-3">
+                <div class="d-flex flex-column align-items-start gap-1">
+                  <p class="text-light-gray mb-0">Способы оплаты</p>
+                  <span
+                    class="badge bg-light-contrast text-light-dark fs-6 fw-normal d-inline-flex align-items-center gap-2"
+                    ><img
+                      src="./assets/images/icons/sber-bank-icon.svg"
+                      alt=""
+                    />Сбер</span
+                  >
+                  <span
+                    class="badge bg-light-contrast text-light-dark fs-6 fw-normal d-inline-flex align-items-center gap-2"
+                    ><img
+                      src="./assets/images/icons/t-bank-icon.svg"
+                      alt=""
+                    />Тинькофф</span
+                  >
+                  <span
+                    class="badge bg-light-contrast text-light-dark fs-6 fw-normal d-inline-flex align-items-center gap-2"
+                    ><img
+                      src="./assets/images/icons/alfa-bank-icon.svg"
+                      alt=""
+                    />Альфа-банк</span
+                  >
+                </div>
+                <div class="d-flex flex-column gap-1">
+                  <p class="text-light-gray mb-0">Успешность сделок</p>
+                  <p class="fs-5 fw-normal mb-0">95%</p>
+                </div>
+              </div>
+              <button
+                class="btn btn-light-dark rounded-4 p-3 d-flex align-items-center gap-2 justify-content-center connect"
+                data-modal="modal6"
+              >
+                Создать сделку
+              </button>
+            </div>
+          </div>
+          <div class="d-flex flex-column gap-4 col-sm-6 col-12">
+            <h4 class="fw-medium mb-0">Отзывы продавца</h4>
+            <div
+              class="d-flex flex-column gap-3 overflow-auto custom-scroll"
+              style="max-height: 325px"
+            >
+              <div class="d-flex gap-3 align-items-center">
+                <img
+                  class="rounded-circle"
+                  width="48"
+                  src="./assets/images/profile-icon.png"
+                  alt=""
+                />
+                <div class="d-flex flex-column gap-1">
+                  <h6 class="fs-6 fw-medium mb-0">Username 👍</h6>
+                  <p class="fs-7 text-light-gray mb-0">
+                    Быстрая сделка, одобряю
+                  </p>
+                </div>
+              </div>
+              <div class="d-flex gap-3 align-items-center">
+                <img
+                  class="rounded-circle"
+                  width="48"
+                  src="./assets/images/profile-icon.png"
+                  alt=""
+                />
+                <div class="d-flex flex-column gap-1">
+                  <h6 class="fs-6 fw-medium mb-0">Username 👍</h6>
+                  <p class="fs-7 text-light-gray mb-0">
+                    Быстрая сделка, одобряю
+                  </p>
+                </div>
+              </div>
+              <div class="d-flex gap-3 align-items-center">
+                <img
+                  class="rounded-circle"
+                  width="48"
+                  src="./assets/images/profile-icon.png"
+                  alt=""
+                />
+                <div class="d-flex flex-column gap-1">
+                  <h6 class="fs-6 fw-medium mb-0">Username 👍</h6>
+                  <p class="fs-7 text-light-gray mb-0">
+                    Быстрая сделка, одобряю
+                  </p>
+                </div>
+              </div>
+              <div class="d-flex gap-3 align-items-center">
+                <img
+                  class="rounded-circle"
+                  width="48"
+                  src="./assets/images/profile-icon.png"
+                  alt=""
+                />
+                <div class="d-flex flex-column gap-1">
+                  <h6 class="fs-6 fw-medium mb-0">Username 👍</h6>
+                  <p class="fs-7 text-light-gray mb-0">
+                    Быстрая сделка, одобряю
+                  </p>
+                </div>
+              </div>
+              <div class="d-flex gap-3 align-items-center">
+                <img
+                  class="rounded-circle"
+                  width="48"
+                  src="./assets/images/profile-icon.png"
+                  alt=""
+                />
+                <div class="d-flex flex-column gap-1">
+                  <h6 class="fs-6 fw-medium mb-0">Username 👍</h6>
+                  <p class="fs-7 text-light-gray mb-0">
+                    Быстрая сделка, одобряю
+                  </p>
+                </div>
+              </div>
+              <div class="d-flex gap-3 align-items-center">
+                <img
+                  class="rounded-circle"
+                  width="48"
+                  src="./assets/images/profile-icon.png"
+                  alt=""
+                />
+                <div class="d-flex flex-column gap-1">
+                  <h6 class="fs-6 fw-medium mb-0">Username 👍</h6>
+                  <p class="fs-7 text-light-gray mb-0">
+                    Быстрая сделка, одобряю
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="custom-modal" id="modal6">
+      <div class="custom-modal-header">
+        <span>Создать сделку</span>
+        <button class="btn" id="close">
+          <img src="./assets/images/icons/close.svg" alt="" />
+        </button>
+      </div>
+      <div class="custom-modal-body d-flex flex-column" style="gap: 2.75rem">
+        <div class="d-flex flex-column align-items-center gap-4">
+          <h3 class="fs-3 fw-medium mb-0">Выберите сумму</h3>
+          <span class="text-light-gray"
+            >Укажите сумму сделки для покупки
+            <span class="text-light-dark">USDT TRC-20</span></span
+          >
+        </div>
+        <div class="d-flex flex-column gap-4">
+          <div class="d-flex flex-column align-items-center gap-0_75">
+            <span class="text-light-gray">Курс продавца:</span>
+            <span
+              class="badge bg-light-contrast text-light-dark fs-6 fw-normal d-inline-flex align-items-center gap-2"
+              >1 USDT = 106.56 ₽</span
+            >
+          </div>
+          <div class="d-flex gap-0_75">
+            <div class="d-flex flex-column gap-0_75 col-6">
+              <p class="text-light-gray mb-0">Отдаёте</p>
+              <label class="search-label">
+                <input
+                  class="search-label__input"
+                  type="text"
+                  placeholder="Кол-во покупки"
+                />
+                <button class="search-label__button disabled">RUB</button>
+              </label>
+            </div>
+            <div class="d-flex flex-column gap-0_75 col-6">
+              <p class="text-light-gray mb-0">Получаете</p>
+              <label class="search-label">
+                <input
+                  class="search-label__input"
+                  type="text"
+                  placeholder="Кол-во покупки"
+                />
+                <button class="search-label__button disabled">USDT</button>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex flex-column gap-0_75">
+          <button
+            class="btn btn-light-dark rounded-4 p-3 d-flex align-items-center gap-2 justify-content-center connect"
+            data-modal="modal7"
+          >
+            Создать сделку
+          </button>
+          <button
+            class="btn btn-gray rounded-4 p-3 d-flex align-items-center gap-2 justify-content-center connect"
+            data-modal="modal5"
+          >
+            Назад к продавцу
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      class="custom-modal"
+      id="modal7"
+      style="min-width: unset; max-width: 420px"
+    >
+      <div
+        class="custom-modal-body d-flex align-items-center flex-column gap-4 p-4"
+      >
+        <img
+          class="loading-icon pt-2"
+          src="./assets/images/icons/loading.png"
+          alt=""
+        />
+        <h3 class="fs-3 fw-medium mb-0 text-center">
+          Ожидайте, пока <br />
+          продавец примет сделку
+        </h3>
+        <p class="text-light-gray text-center mb-0">
+          Вы можете отменить сделку, если ожидание слишком долгое время.
+        </p>
+        <button
+          class="btn btn-gray rounded-4 p-3 d-flex align-items-center gap-2 justify-content-center w-100"
+        >
+          Отменить
+        </button>
+      </div>
+    </div>
+    <div class="custom-modal" id="modal8">
+      <div
+        class="custom-modal-body d-flex align-items-center flex-column gap-4"
+      >
+        <img class="" src="./assets/images/icons/success.svg" alt="" />
+        <h3 class="fs-3 fw-medium mb-0 text-center">Сделка принята</h3>
+        <span class="text-light-gray text-center"
+          >Отправьте <span class="text-light-dark">15 450.79 ₽</span> на
+          указанные ревизиты</span
+        >
+        <div class="d-flex flex-column gap-2 w-100">
+          <div class="d-flex gap-2 flex-column flex-sm-row">
+            <div
+              class="bg-light-contrast p-0_75 rounded-4 d-flex flex-column gap-1 col-sm-6 col-12"
+              style="flex: 0 auto"
+            >
+              <p class="text-light-gray mb-0">Сумма отправки</p>
+              <p class="fs-5 fw-normal mb-0">15 450.79 ₽</p>
+            </div>
+            <div
+              class="bg-light-contrast p-0_75 rounded-4 d-flex flex-column gap-1 col-sm-6 col-12"
+              style="flex: 0 auto"
+            >
+              <p class="text-light-gray mb-0">Реквизиты</p>
+              <p class="fs-5 fw-normal mb-0">+7 (905) 669-12-95</p>
+            </div>
+          </div>
+          <div
+            class="bg-light-contrast p-0_75 rounded-4 d-flex flex-column gap-1"
+            style="flex: 0 auto"
+          >
+            <p class="text-light-gray mb-0">ФИО получателя</p>
+            <p class="fs-5 fw-normal mb-0">Рамзан Ахматович Кадыров</p>
+          </div>
+          <div
+            class="bg-light-contrast p-0_75 rounded-4 d-flex flex-column gap-1"
+            style="flex: 0 auto"
+          >
+            <p class="text-light-gray mb-0">Банк</p>
+            <div class="payment-var">
+              <img src="./assets/images/icons/t-bank-icon.svg" alt="" />
+              Тинькофф
+            </div>
+          </div>
+        </div>
+        <div class="d-flex flex-column gap-2 w-100">
+          <div class="d-flex gap-2 flex-column flex-sm-row">
+            <button
+              class="btn btn-danger-custom rounded-4 p-3 d-flex align-items-center gap-2 justify-content-center col-sm-5 col-12"
+              style="flex: 0 auto"
+            >
+              Отменить сделку
+            </button>
+            <button
+              class="btn btn-gray rounded-4 p-3 d-flex align-items-center gap-2 justify-content-center col-sm-8 col-12"
+              style="flex: 0 auto"
+            >
+              <img
+                class="filter-black"
+                src="./assets/images/icons/chat.svg"
+                alt=""
+              />
+              Чат с продавцом
+            </button>
+          </div>
+          <button
+            class="btn btn-light-dark rounded-4 p-3 d-flex align-items-center gap-2 justify-content-center"
+          >
+            Я оплатил
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      class="custom-modal"
+      id="modal9"
+      style="min-width: unset; max-width: 445px"
+    >
+      <div
+        class="custom-modal-body d-flex align-items-center flex-column gap-4 p-4"
+      >
+        <img class="" src="./assets/images/icons/success.svg" alt="" />
+        <h3 class="fs-3 fw-medium mb-0 text-center">Успешно</h3>
+        <span class="text-light-gray text-center"
+          >Продавец закрыл сделку. <br />
+          Средства поступили на баланс</span
+        >
+        <span class="text-center"
+          >По желанию, вы можете оставить отзыв продавцу</span
+        >
+        <div class="radio-label p-1 w-100 rounded-4">
+          <input
+            type="radio"
+            class="btn-check"
+            id="btn-radio-3"
+            checked=""
+            autocomplete="off"
+            name="rate"
+          />
+          <label
+            class="btn btn-gray fw-normal px-3 rounded-4 col-6 p-0_75"
+            style="flex: 0 auto"
+            for="btn-radio-3"
+            ><img
+              height="20"
+              width="20"
+              src="./assets/images/icons/like-icon.png"
+              alt="Like"
+          /></label>
+          <input
+            type="radio"
+            class="btn-check"
+            id="btn-radio-4"
+            autocomplete="off"
+            name="rate"
+          />
+          <label
+            class="btn btn-gray fw-normal px-3 rounded-4 col-6 p-0_75"
+            style="flex: 0 auto"
+            for="btn-radio-4"
+            ><img
+              height="20"
+              width="20"
+              src="./assets/images/icons/dislike-icon.png"
+              alt="Dislike"
+          /></label>
+        </div>
+        <textarea
+          class="bg-light-contrast rounded-4 form-control"
+          name=""
+          id=""
+          rows="3"
+          placeholder="Напишите отзыв (по желанию)"
+        ></textarea>
+
+        <button
+          class="btn btn-light-dark rounded-4 p-3 d-flex align-items-center gap-2 justify-content-center w-100"
+          id="close"
+        >
+          Отправить и закрыть
+        </button>
+      </div>
+    </div>
+    <div class="custom-modal" id="modal10">
+      <div class="custom-modal-header">
+        <span>Шаг 1</span>
+        <button class="btn" id="close">
+          <img src="./assets/images/icons/close.svg" alt="" />
+        </button>
+      </div>
+      <div
+        class="custom-modal-body d-flex align-items-center flex-column gap-4 p-4"
+      >
+        <div class="steps-container">
+          <div class="step active"></div>
+          <div class="step"></div>
+          <div class="step"></div>
+          <div class="step"></div>
+          <div class="step"></div>
+        </div>
+        <h3 class="fs-3 fw-medium mb-0 text-center">Я хочу...</h3>
+        <p class="text-light-gray text-center mb-0">
+          Выберите предложение, которое вы хотите создать
+        </p>
+        <div class="d-flex flex-column gap-2 w-100">
+          <div class="d-flex gap-2 flex-column flex-sm-row">
+            <button
+              class="btn btn-light-dark rounded-4 p-3 d-flex align-items-center gap-2 justify-content-center col-sm-6 col-12"
+              style="flex: 0 auto"
+            >
+              <img
+                src="./assets/images/icons/arrow-down-left.svg"
+                width="28"
+                alt=""
+              />
+              Купить
+            </button>
+            <button
+              class="btn btn-light-dark rounded-4 p-3 d-flex align-items-center gap-2 justify-content-center col-sm-6 col-12"
+              style="flex: 0 auto"
+            >
+              <img
+                src="./assets/images/icons/arrow-up-right.svg"
+                width="28"
+                alt=""
+              />
+              Продать
+            </button>
+          </div>
+          <button
+            class="btn btn-gray rounded-4 p-3 d-flex align-items-center gap-2 justify-content-center"
+            id="close"
+          >
+            Вернуться
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="custom-modal" id="modal11">
+      <div class="custom-modal-header">
+        <span>Шаг 2</span>
+        <button class="btn" id="close">
+          <img src="./assets/images/icons/close.svg" alt="" />
+        </button>
+      </div>
+      <div
+        class="custom-modal-body d-flex align-items-center flex-column gap-4 p-4"
+      >
+        <div class="steps-container">
+          <div class="step active"></div>
+          <div class="step active"></div>
+          <div class="step"></div>
+          <div class="step"></div>
+          <div class="step"></div>
+        </div>
+        <h3 class="fs-3 fw-medium mb-0 text-center">Выберите валюты</h3>
+        <p class="text-light-gray text-center mb-0">
+          Установите валюты, которые вы хотите обменять
+        </p>
+        <div class="d-flex gap-0_75 flex-column flex-sm-row w-100">
+          <div
+            class="d-flex flex-column gap-0_75 col-sm-6 col-12"
+            style="flex: 0 auto"
+          >
+            <p class="text-light-gray mb-0">Продаю</p>
+            <select
+              name="cyrrency1"
+              id="cyrrency1"
+              class="settings__select wide"
+              data-placeholder="Выберете криптовалюту"
+            >
+              <option value="trc">USDT (TRC-20)</option>
+              <option value="erc">USDT (ERC-20)</option>
+              <option value="btc">BTC</option>
+            </select>
+          </div>
+          <div
+            class="d-flex flex-column gap-0_75 col-sm-6 col-12"
+            style="flex: 0 auto"
+          >
+            <p class="text-light-gray mb-0">Получаю</p>
+            <select
+              name="cyrrency1"
+              id="cyrrency1"
+              class="settings__select wide"
+              data-placeholder="Выберите валюту"
+            >
+              <option value="trc">RUB</option>
+              <option value="erc">USD</option>
+              <option value="btc">EUR</option>
+            </select>
+          </div>
+        </div>
+        <div class="d-flex flex-column gap-2 w-100">
+          <button
+            class="btn btn-light-dark rounded-4 p-3 d-flex align-items-center gap-2 justify-content-center w-100"
+          >
+            Далее
+          </button>
+          <button
+            class="btn btn-gray rounded-4 p-3 d-flex align-items-center gap-2 justify-content-center w-100 connect"
+            data-modal="modal10"
+          >
+            Вернуться
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="custom-modal" id="modal12">
+      <div class="custom-modal-header">
+        <span>Шаг 3</span>
+        <button class="btn" id="close">
+          <img src="./assets/images/icons/close.svg" alt="" />
+        </button>
+      </div>
+      <div
+        class="custom-modal-body d-flex align-items-center flex-column gap-4 p-4"
+      >
+        <div class="steps-container">
+          <div class="step active"></div>
+          <div class="step active"></div>
+          <div class="step active"></div>
+          <div class="step"></div>
+          <div class="step"></div>
+        </div>
+        <h3 class="fs-3 fw-medium mb-0 text-center">Подберите курс</h3>
+        <p class="text-light-gray text-center mb-0">
+          Установите фиксированную цену в RUB для продажи USDT
+        </p>
+        <div class="d-flex flex-column align-items-center gap-0_75">
+          <span class="text-light-gray">Биржевой курс:</span>
+          <span class="badge bg-light-contrast text-light-dark fs-6 fw-normal d-inline-flex align-items-center gap-2">1 USDT = 106.56 ₽</span>
+        </div>
+
+        <div class="radio-label p-1 w-100 rounded-4">
+          <input type="radio" class="btn-check" id="btn-radio-5" checked="" autocomplete="off" name="course">
+          <label class="btn btn-gray fw-normal px-3 rounded-4 col-6 p-0_75" style="flex: 0 auto" for="btn-radio-5">Фиксированный</label>
+          <input type="radio" class="btn-check" id="btn-radio-6" autocomplete="off" name="course">
+          <label class="btn btn-gray fw-normal px-3 rounded-4 col-6 p-0_75" style="flex: 0 auto" for="btn-radio-6">Плавающий</label>
+        </div>
+        <label class="search-label w-100 mb-3">
+          <input class="search-label__input " type="text" placeholder="Цена за 1 USDT в ₽">
+        </label>
+        <div class="d-flex flex-column gap-2 w-100">
+          <button
+            class="btn btn-light-dark rounded-4 p-3 d-flex align-items-center gap-2 justify-content-center w-100"
+          >
+            Далее
+          </button>
+          <button
+            class="btn btn-gray rounded-4 p-3 d-flex align-items-center gap-2 justify-content-center w-100 connect"
+            data-modal="modal10"
+          >
+            Вернуться
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="custom-modal" id="modal13">
+      <div class="custom-modal-header">
+        <span>Шаг 4</span>
+        <button class="btn" id="close">
+          <img src="./assets/images/icons/close.svg" alt="" />
+        </button>
+      </div>
+      <div
+        class="custom-modal-body d-flex align-items-center flex-column gap-4 p-4"
+      >
+        <div class="steps-container">
+          <div class="step active"></div>
+          <div class="step active"></div>
+          <div class="step active"></div>
+          <div class="step active"></div>
+          <div class="step"></div>
+        </div>
+        <h3 class="fs-3 fw-medium mb-0 text-center">Выберите объем и лимиты</h3>
+        <p class="text-light-gray text-center mb-0">
+          Установите общий объем и лимиты
+        </p>
+        <div class="d-flex flex-column align-items-center gap-0_75">
+          <span class="text-light-gray">Биржевой курс:</span>
+          <span class="badge bg-light-contrast text-light-dark fs-6 fw-normal d-inline-flex align-items-center gap-2">1 USDT = 106.56 ₽</span>
+        </div>
+
+        <label class="search-label w-100">
+          <input class="search-label__input" type="text" placeholder="Объем USDT">
+        </label>
+        <div class="d-flex gap-0_75 w-100">
+          <div class="d-flex flex-column gap-1 col-6">
+            <label class="search-label">
+              <input class="search-label__input" type="text" placeholder="От Р">
+            </label>
+            <p class="text-light-gray mb-0">Минимум <span class="text-light-dark">500 ₽</span></p>
+          </div>
+          <div class="d-flex flex-column gap-1 col-6">
+            <label class="search-label">
+              <input class="search-label__input" type="text" placeholder="До Р">
+            </label>
+            <p class="text-light-gray mb-0">Максимум <span class="text-light-dark">5 000 000 ₽</span></p>
+          </div>
+        </div>
+        <div class="d-flex flex-column gap-2 w-100">
+          <button
+            class="btn btn-light-dark rounded-4 p-3 d-flex align-items-center gap-2 justify-content-center w-100"
+          >
+            Далее
+          </button>
+          <button
+            class="btn btn-gray rounded-4 p-3 d-flex align-items-center gap-2 justify-content-center w-100 connect"
+            data-modal="modal10"
+          >
+            Вернуться
+          </button>
+        </div>
+      </div>
+    </div>
+    <footer></footer>
+    <script src="./assets/js/theme-switcher.js"></script>
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/nice-select2.js"></script>
+    <script src="./assets/js/custom-modals.js"></script>
+    <script src="./assets/js/dropdown.js"></script>
+    <script src="./assets/js/select-init.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./assets/js/datatables.min.js"></script>
+    <script>
+      new DataTable("#myTable", {
+        language: {
+          url: "./assets/js/datatables.ru.json",
+        },
+        searching: false,
+        // scrollX: true
+        // dom: '<"top"f>t<"bottom"lp><"clear">',
+      });
+      new DataTable("#mySuggestions", {
+        language: {
+          url: "./assets/js/datatables.ru.json",
+        },
+        searching: false,
+      });
+      new DataTable("#myTrades", {
+        language: {
+          url: "./assets/js/datatables.ru.json",
+        },
+        searching: false,
+      });
+    </script>
+    <!-- <script>
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    </script> -->
+    <script>
+      // Дебагер
+      document.addEventListener("keydown", function (event) {
+        if (event.keyCode === 119) {
+          event.preventDefault();
+          debugger;
+        }
+      });
+    </script>
+  </body>
+</html>
