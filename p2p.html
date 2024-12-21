@@ -1654,17 +1654,47 @@
         </p>
         <div class="d-flex flex-column align-items-center gap-0_75">
           <span class="text-light-gray">Биржевой курс:</span>
-          <span class="badge bg-light-contrast text-light-dark fs-6 fw-normal d-inline-flex align-items-center gap-2">1 USDT = 106.56 ₽</span>
+          <span
+            class="badge bg-light-contrast text-light-dark fs-6 fw-normal d-inline-flex align-items-center gap-2"
+            >1 USDT = 106.56 ₽</span
+          >
         </div>
 
         <div class="radio-label p-1 w-100 rounded-4">
-          <input type="radio" class="btn-check" id="btn-radio-5" checked="" autocomplete="off" name="course">
-          <label class="btn btn-gray fw-normal px-3 rounded-4 col-6 p-0_75" style="flex: 0 auto" for="btn-radio-5">Фиксированный</label>
-          <input type="radio" class="btn-check" id="btn-radio-6" autocomplete="off" name="course">
-          <label class="btn btn-gray fw-normal px-3 rounded-4 col-6 p-0_75" style="flex: 0 auto" for="btn-radio-6">Плавающий</label>
+          <input
+            type="radio"
+            class="btn-check"
+            id="btn-radio-5"
+            checked=""
+            autocomplete="off"
+            name="course"
+          />
+          <label
+            class="btn btn-gray fw-normal px-3 rounded-4 col-6 p-0_75"
+            style="flex: 0 auto"
+            for="btn-radio-5"
+            >Фиксированный</label
+          >
+          <input
+            type="radio"
+            class="btn-check"
+            id="btn-radio-6"
+            autocomplete="off"
+            name="course"
+          />
+          <label
+            class="btn btn-gray fw-normal px-3 rounded-4 col-6 p-0_75"
+            style="flex: 0 auto"
+            for="btn-radio-6"
+            >Плавающий</label
+          >
         </div>
         <label class="search-label w-100 mb-3">
-          <input class="search-label__input " type="text" placeholder="Цена за 1 USDT в ₽">
+          <input
+            class="search-label__input"
+            type="text"
+            placeholder="Цена за 1 USDT в ₽"
+          />
         </label>
         <div class="d-flex flex-column gap-2 w-100">
           <button
@@ -1704,24 +1734,43 @@
         </p>
         <div class="d-flex flex-column align-items-center gap-0_75">
           <span class="text-light-gray">Биржевой курс:</span>
-          <span class="badge bg-light-contrast text-light-dark fs-6 fw-normal d-inline-flex align-items-center gap-2">1 USDT = 106.56 ₽</span>
+          <span
+            class="badge bg-light-contrast text-light-dark fs-6 fw-normal d-inline-flex align-items-center gap-2"
+            >1 USDT = 106.56 ₽</span
+          >
         </div>
 
         <label class="search-label w-100">
-          <input class="search-label__input" type="text" placeholder="Объем USDT">
+          <input
+            class="search-label__input"
+            type="text"
+            placeholder="Объем USDT"
+          />
         </label>
         <div class="d-flex gap-0_75 w-100">
           <div class="d-flex flex-column gap-1 col-6">
             <label class="search-label">
-              <input class="search-label__input" type="text" placeholder="От Р">
+              <input
+                class="search-label__input"
+                type="text"
+                placeholder="От Р"
+              />
             </label>
-            <p class="text-light-gray mb-0">Минимум <span class="text-light-dark">500 ₽</span></p>
+            <p class="text-light-gray mb-0">
+              Минимум <span class="text-light-dark">500 ₽</span>
+            </p>
           </div>
           <div class="d-flex flex-column gap-1 col-6">
             <label class="search-label">
-              <input class="search-label__input" type="text" placeholder="До Р">
+              <input
+                class="search-label__input"
+                type="text"
+                placeholder="До Р"
+              />
             </label>
-            <p class="text-light-gray mb-0">Максимум <span class="text-light-dark">5 000 000 ₽</span></p>
+            <p class="text-light-gray mb-0">
+              Максимум <span class="text-light-dark">5 000 000 ₽</span>
+            </p>
           </div>
         </div>
         <div class="d-flex flex-column gap-2 w-100">
@@ -1736,6 +1785,397 @@
           >
             Вернуться
           </button>
+        </div>
+      </div>
+    </div>
+    <div class="custom-modal" id="modal14" style="max-width: 580px">
+      <div class="custom-modal-header">
+        <span>Шаг 4</span>
+        <button class="btn" id="close">
+          <img src="./assets/images/icons/close.svg" alt="" />
+        </button>
+      </div>
+      <div
+        class="custom-modal-body d-flex align-items-center flex-column gap-4 p-4"
+      >
+        <div class="steps-container">
+          <div class="step active"></div>
+          <div class="step active"></div>
+          <div class="step active"></div>
+          <div class="step active"></div>
+          <div class="step"></div>
+        </div>
+        <h3 class="fs-3 fw-medium mb-0 text-center">Выберите реквизиты</h3>
+        <p class="text-light-gray text-center mb-0">
+          Выберите реквизиты для оплаты
+        </p>
+        <div class="d-flex flex-column align-items-center gap-0_75">
+          <button
+            class="btn btn-gray rounded-4 p-3 d-flex align-items-center gap-2 justify-content-center w-100 connect" data-modal="modal15"
+          >
+            <img
+              class="filter-black"
+              src="./assets/images/icons/plus.svg"
+              alt=""
+            />
+            Добавить реквизиты
+          </button>
+        </div>
+        <div class="d-flex w-100 flex-column gap-3">
+          <select
+            name="reqv"
+            id="reqv"
+            class="settings__select wide"
+            data-placeholder="Выберите реквизиты"
+          >
+            <option value="all">СБОЛ</option>
+            <option value="day">ТИНЬ</option>
+            <option value="week">Еще</option>
+            <option value="month">Еще 2</option>
+          </select>
+
+          <div class="reqv-container mb-4">
+            <div class="reqv-item">
+              <img
+                class="reqv-item__img"
+                src="./assets/images/icons/alfa-bank-icon.svg"
+                alt=""
+              />
+              Альфа *2455
+              <button class="btn reqv-item__remove">
+                <img src="./assets/images/icons/close.svg" alt="" />
+              </button>
+            </div>
+            <div class="reqv-item">
+              <img
+                class="reqv-item__img"
+                src="./assets/images/icons/sber-bank-icon.svg"
+                alt=""
+              />
+              Сбер *1206
+              <button class="btn reqv-item__remove">
+                <img src="./assets/images/icons/close.svg" alt="" />
+              </button>
+            </div>
+            <div class="reqv-item">
+              <img
+                class="reqv-item__img"
+                src="./assets/images/icons/t-bank-icon.svg"
+                alt=""
+              />
+              Тинькофф *2455
+              <button class="btn reqv-item__remove">
+                <img src="./assets/images/icons/close.svg" alt="" />
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex flex-column gap-2 w-100">
+          <button
+            class="btn btn-gray rounded-4 p-3 d-flex align-items-center gap-2 justify-content-center w-100"
+            disabled
+          >
+            Сначала выберите реквизиты
+          </button>
+          <button
+            class="btn btn-light-dark rounded-4 p-3 d-flex align-items-center gap-2 justify-content-center w-100"
+          >
+            Далее
+          </button>
+          <button
+            class="btn btn-gray rounded-4 p-3 d-flex align-items-center gap-2 justify-content-center w-100 connect"
+            data-modal="modal10"
+          >
+            Вернуться
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="custom-modal" id="modal15">
+      <div class="custom-modal-header">
+        <span>Новые реквизиты</span>
+        <button class="btn" id="close">
+          <img src="./assets/images/icons/close.svg" alt="" />
+        </button>
+      </div>
+      <div
+        class="custom-modal-body d-flex align-items-center flex-column gap-4 p-4"
+      >
+        <div class="steps-container">
+          <div class="step active"></div>
+          <div class="step active"></div>
+          <div class="step active"></div>
+          <div class="step active"></div>
+          <div class="step"></div>
+        </div>
+        <h3 class="fs-3 fw-medium mb-0 text-center">Добавьте реквизиты</h3>
+        <p class="text-light-gray text-center mb-0">
+          Добавьте реквизиты для оплаты
+        </p>
+        <div class="d-flex flex-column gap-0_75 w-100">
+          <p class="text-light-gray mb-0">Банк</p>
+          <select
+            name="reqv_new"
+            id="reqv_new"
+            class="settings__select wide"
+            data-placeholder="Выберите банк"
+          >
+            <option value="all">СБОЛ</option>
+            <option value="day">ТИНЬ</option>
+            <option value="week">Еще</option>
+            <option value="month">Еще 2</option>
+          </select>
+        </div>
+        <div class="d-flex flex-column gap-0_75 w-100 mb-4">
+          <p class="text-light-gray mb-0">Реквизиты</p>
+          <label class="search-label">
+            <input
+              class="search-label__input"
+              type="text"
+              placeholder="Номер телефона получателя"
+            />
+          </label>
+          <label class="search-label">
+            <input
+              class="search-label__input"
+              type="text"
+              placeholder="ФИО получателя"
+            />
+          </label>
+        </div>
+        <div class="d-flex flex-column gap-2 w-100">
+          <button
+            class="btn btn-light-dark rounded-4 p-3 d-flex align-items-center gap-2 justify-content-center w-100"
+          >
+            Добавить
+          </button>
+          <button
+            class="btn btn-gray rounded-4 p-3 d-flex align-items-center gap-2 justify-content-center w-100 connect"
+            data-modal="modal10"
+          >
+            Вернуться
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="custom-modal" id="modal16" style="max-width: 580px">
+      <div
+        class="custom-modal-body d-flex align-items-center flex-column gap-4"
+      >
+        <h3 class="fs-3 fw-medium mb-0 text-center">
+          Пожалуйста, перепроверьте
+        </h3>
+        <span class="text-light-gray text-center"
+          >Пожалуйста, подтвердите правильность данных, во избежание проблем с
+          покупкой/оплатой</span
+        >
+        <div class="d-flex flex-column gap-2 w-100">
+          <div class="d-flex gap-2 flex-column flex-sm-row">
+            <div
+              class="bg-light-contrast p-0_75 rounded-4 d-flex flex-column gap-1 col-sm-6 col-12"
+              style="flex: 0 auto"
+            >
+              <p class="text-light-gray mb-0">Курс</p>
+              <div class="payment-var">
+                <p class="fs-6 fw-normal mb-0">отдаю 1 USDT</p>
+              </div>
+              <div class="payment-var">
+                <p class="fs-6 fw-normal mb-0">получаю 106.56 ₽</p>
+              </div>
+            </div>
+            <div
+              class="bg-light-contrast p-0_75 rounded-4 d-flex flex-column gap-1 col-sm-6 col-12"
+              style="flex: 0 auto"
+            >
+              <p class="text-light-gray mb-0">Реквизиты</p>
+              <div class="d-flex align-items-center gap-0_75">
+                <img src="./assets/images/icons/alfa-bank-icon.svg" alt="" />
+                <p class="fs-6 fw-normal mb-0">+7 (905) 669-12-95</p>
+              </div>
+              <div class="d-flex align-items-center gap-0_75">
+                <img src="./assets/images/icons/sber-bank-icon.svg" alt="" />
+                <p class="fs-6 fw-normal mb-0">+7 (905) 427-02-09</p>
+              </div>
+              <div class="d-flex align-items-center gap-0_75">
+                <img src="./assets/images/icons/t-bank-icon.svg" alt="" />
+                <p class="fs-6 fw-normal mb-0">+7 (905) 669-12-95</p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-light-contrast p-0_75 rounded-4 d-flex flex-column gap-1"
+            style="flex: 0 auto"
+          >
+            <p class="text-light-gray mb-0">ФИО получателя</p>
+            <div class="d-flex align-items-center gap-0_75">
+              <img src="./assets/images/icons/alfa-bank-icon.svg" alt="" />
+              <p class="fs-6 fw-normal mb-0">Рамзан Ахматович Кадыров</p>
+            </div>
+            <div class="d-flex align-items-center gap-0_75">
+              <img src="./assets/images/icons/sber-bank-icon.svg" alt="" />
+              <p class="fs-6 fw-normal mb-0">Рамзан Ахматович Кадыров</p>
+            </div>
+            <div class="d-flex align-items-center gap-0_75">
+              <img src="./assets/images/icons/t-bank-icon.svg" alt="" />
+              <p class="fs-6 fw-normal mb-0">Рамзан Ахматович Кадыров</p>
+            </div>
+          </div>
+          <div
+            class="bg-light-contrast p-0_75 rounded-4 d-flex flex-column gap-1"
+            style="flex: 0 auto"
+          >
+            <p class="text-light-gray mb-0">Банк(и)</p>
+            <div class="d-flex gap-2 flex-wrap">
+              <div class="payment-var">
+                <img src="./assets/images/icons/t-bank-icon.svg" alt="" />
+                Тинькофф
+              </div>
+              <div class="payment-var">
+                <img src="./assets/images/icons/sber-bank-icon.svg" alt="" />
+                Сбер
+              </div>
+              <div class="payment-var">
+                <img src="./assets/images/icons/alfa-bank-icon.svg" alt="" />
+                Альфа Банк
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex flex-column gap-2 w-100">
+          <button
+            class="btn btn-warning-custom rounded-4 p-3 d-flex align-items-center gap-2 justify-content-center"
+          >
+            Подтверждаю правильность данных
+          </button>
+          <button
+            class="btn btn-gray rounded-4 p-3 d-flex align-items-center gap-2 justify-content-center"
+          >
+            Редактировать
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      class="custom-modal"
+      id="modal17"
+      style="min-width: unset; max-width: 480px"
+    >
+      <div
+        class="custom-modal-body d-flex align-items-center flex-column gap-4 p-4"
+      >
+        <img class="" src="./assets/images/icons/success.svg" alt="" />
+        <h3 class="fs-3 fw-medium mb-0 text-center">Успешно</h3>
+        <span class="text-light-gray text-center"
+          >Ваше предложение успешно размещено на P2P бирже</span
+        >
+
+        <button
+          class="btn btn-light-dark rounded-4 p-3 d-flex align-items-center gap-2 justify-content-center w-100"
+          id="close"
+        >
+          Закрыть
+        </button>
+      </div>
+    </div>
+    <div class="custom-modal" id="chat">
+      <div class="custom-modal-header">
+        <span>Чат с продавцом</span>
+        <button class="btn" id="close">
+          <img src="./assets/images/icons/close.svg" alt="" />
+        </button>
+      </div>
+      <div class="custom-modal-body d-flex flex-column p-4">
+        <div class="chat-header">
+          <div class="seller">
+            <img
+              class="seller__img"
+              src="./assets/images/profile-icon.png"
+              alt=""
+            />
+            <div class="seller__info">
+              <div class="seller__name">Username</div>
+              <div class="seller__activity text-danger">Оффлайн</div>
+              <div class="seller__activity text-success">В сети</div>
+            </div>
+          </div>
+          <div class="dropdown custom-dropdown">
+            <button
+              class="btn"
+              data-bs-offset="10,20"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img src="./assets/images/icons/menu-dots.svg" alt="" />
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item active" href="#">1</a></li>
+              <li><a class="dropdown-item" href="#">2</a></li>
+              <li><a class="dropdown-item" href="#">3</a></li>
+              <li><hr class="dropdown-divider" /></li>
+              <li><a class="dropdown-item" href="#">4</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="chat-body">
+          <div
+            class="bg-light-contrast p-0_75 rounded-4 d-flex gap-1 justify-content-center m-auto mb-4"
+          >
+            <span class="text-light-gray text-center"
+              >Сделка на продажу
+              <span class="text-light-dark">100 USDT</span> создана</span
+            >
+          </div>
+          <div class="message">
+            <div class="message__content">
+              Привет. Когда рак на горе свистнет
+            </div>
+            <div class="message__time">10:31</div>
+          </div>
+          <div class="message">
+            <div class="message__content">
+              <a href="./assets/images/chat-placeholder.jpg" target="_blank">
+                <img src="./assets/images/chat-placeholder.jpg" alt="" />
+              </a>
+            </div>
+            <div class="message__time">10:31</div>
+          </div>
+          <div class="message message--right">
+            <div class="message__content">
+              Привет, я создал сделку, когда поступит оплата?
+            </div>
+            <div class="message__time">10:31</div>
+          </div>
+          <div class="message message--right">
+            <div class="message__content">
+              <a href="./assets/images/chat-placeholder.jpg" target="_blank">
+                <img src="./assets/images/chat-placeholder.jpg" alt="" />
+              </a>
+            </div>
+            <div class="message__time">10:31</div>
+          </div>
+          <div
+            class="bg-success-subtle p-0_75 rounded-4 d-flex gap-1 justify-content-center m-auto mt-4 mb-4"
+          >
+            <span class="text-success-emphasis text-center"
+              >Продавец отправил вам
+              <span class="text-light-dark">10 624.56 ₽</span></span
+            >
+          </div>
+        </div>
+        <div class="chat-footer">
+          <button
+            class="btn btn-warning-custom rounded-4 p-3 d-flex align-items-center gap-2 justify-content-center"
+          >
+            Подтвердить и закрыть сделку
+          </button>
+          <div class="chat-label">
+            <label class="btn btn-gray" style="padding: 16px;">
+              <img class="filter-black" src="./assets/images/icons/attach.svg" alt="">
+              <input type="file" accept="image/*" style="display: none;" id="file-input">
+            </label>
+            <textarea class="chat-input" name="" id="" placeholder="Написать сообщение..." style="height: auto" oninput="this.style.height = 'auto'; this.style.height = this.scrollHeight + 'px'"></textarea>
+            <button class="btn btn-light-dark p-3 rounded-0_75" style="padding: 16px;">Отправить</button>
+          </div>
         </div>
       </div>
     </div>
