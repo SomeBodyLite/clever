@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="./assets/css/nice-select2.css" />
     <link rel="stylesheet" href="./assets/css/datatables.min.css" />
+    <link rel="stylesheet" href="./assets/css/custom-select.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link
       rel="apple-touch-icon"
@@ -684,9 +685,7 @@
                     autocomplete="off"
                     name="tr-type"
                   />
-                  <label
-                    class="btn fw-normal px-3 rounded-2"
-                    for="btn-radio"
+                  <label class="btn fw-normal px-3 rounded-2" for="btn-radio"
                     >Купить</label
                   >
                   <input
@@ -696,34 +695,213 @@
                     autocomplete="off"
                     name="tr-type"
                   />
-                  <label
-                    class="btn fw-normal px-3 rounded-2"
-                    for="btn-radio-2"
+                  <label class="btn fw-normal px-3 rounded-2" for="btn-radio-2"
                     >Продать</label
                   >
                 </div>
-                <select
-                  name="cyrrency"
-                  id="cyrrency"
-                  class="settings__select searchable"
-                  data-placeholder="Криптовалюта"
-                >
-                  <option value="all">ETH</option>
-                  <option value="day">За день</option>
-                  <option value="week">За неделю</option>
-                  <option value="month">За месяц</option>
-                </select>
-                <select
-                  name="wallet"
-                  id="wallet"
-                  class="settings__select"
-                  data-placeholder="Способ оплаты"
-                >
-                  <option value="all">СБОЛ</option>
-                  <option value="day">ТИНЬ</option>
-                  <option value="week">Еще</option>
-                  <option value="month">Еще 2</option>
-                </select>
+                <div class="itc-select" id="select-1">
+                  <button
+                    type="button"
+                    class="itc-select__toggle"
+                    name="currency"
+                    value=""
+                    data-select="toggle"
+                    data-index="-1"
+                  >
+                    Криптовалюта
+                  </button>
+                  <div class="itc-select__dropdown">
+                    <ul class="itc-select__options">
+                      <li
+                        class="itc-select__option"
+                        data-select="option"
+                        data-value="usdt_trc"
+                        data-index="0"
+                      >
+                        <div class="position-relative">
+                          <img
+                            src="./assets/images/icons/usdt.svg"
+                            width="24"
+                            alt="USDT"
+                          />
+                          <img
+                            class="position-absolute"
+                            src="./assets/images/icons/tron.svg"
+                            width="12"
+                            alt="TRON"
+                            style="right: -3px; top: -3px"
+                          />
+                        </div>
+                        USDT (TRC20)
+                      </li>
+                      <li
+                        class="itc-select__option"
+                        data-select="option"
+                        data-value="usdt_erc"
+                        data-index="1"
+                      >
+                        <div class="position-relative">
+                          <img
+                            src="./assets/images/icons/usdt.svg"
+                            width="24"
+                            alt="USDT"
+                          />
+                          <img
+                            class="position-absolute"
+                            src="./assets/images/icons/eth.svg"
+                            width="12"
+                            alt="TRON"
+                            style="right: -3px; top: -3px"
+                          />
+                        </div>
+                        USDT (ERC20)
+                      </li>
+                      <li
+                        class="itc-select__option"
+                        data-select="option"
+                        data-value="t-bank"
+                        data-index="2"
+                      >
+                        <img
+                          src="./assets/images/icons/t-bank-icon.svg"
+                          width="24"
+                          alt="Тинькофф"
+                        />
+                        Тинькофф
+                      </li>
+                      <li
+                        class="itc-select__option"
+                        data-select="option"
+                        data-value="sber"
+                        data-index="3"
+                      >
+                        <img
+                          src="./assets/images/icons/sber-bank-icon.svg"
+                          width="24"
+                          alt="Сбербанк"
+                        />
+                        Сбербанк
+                      </li>
+                      <li
+                        class="itc-select__option"
+                        data-select="option"
+                        data-value="alfa"
+                        data-index="4"
+                      >
+                        <img
+                          src="./assets/images/icons/alfa-bank-icon.svg"
+                          width="24"
+                          alt="Альфа Банк"
+                        />
+                        Альфа Банк
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="itc-select wide" id="select-2">
+                  <button
+                    type="button"
+                    class="itc-select__toggle"
+                    name="wallet"
+                    value=""
+                    data-select="toggle"
+                    data-index="-1"
+                  >
+                    <img
+                      src="./assets/images/icons/t-bank-icon.svg"
+                      width="24"
+                      alt="Способ оплаты"
+                    />
+                    Способ оплаты
+                  </button>
+                  <div class="itc-select__dropdown">
+                    <ul class="itc-select__options">
+                      <li
+                        class="itc-select__option"
+                        data-select="option"
+                        data-value="usdt_trc"
+                        data-index="0"
+                      >
+                        <div class="position-relative">
+                          <img
+                            src="./assets/images/icons/usdt.svg"
+                            width="24"
+                            alt="USDT"
+                          />
+                          <img
+                            class="position-absolute"
+                            src="./assets/images/icons/tron.svg"
+                            width="12"
+                            alt="TRON"
+                            style="right: -3px; top: -3px"
+                          />
+                        </div>
+                        USDT (TRC20)
+                      </li>
+                      <li
+                        class="itc-select__option"
+                        data-select="option"
+                        data-value="usdt_erc"
+                        data-index="1"
+                      >
+                        <div class="position-relative">
+                          <img
+                            src="./assets/images/icons/usdt.svg"
+                            width="24"
+                            alt="USDT"
+                          />
+                          <img
+                            class="position-absolute"
+                            src="./assets/images/icons/eth.svg"
+                            width="12"
+                            alt="TRON"
+                            style="right: -3px; top: -3px"
+                          />
+                        </div>
+                        USDT (ERC20)
+                      </li>
+                      <li
+                        class="itc-select__option"
+                        data-select="option"
+                        data-value="t-bank"
+                        data-index="2"
+                      >
+                        <img
+                          src="./assets/images/icons/t-bank-icon.svg"
+                          width="24"
+                          alt="Тинькофф"
+                        />
+                        Тинькофф
+                      </li>
+                      <li
+                        class="itc-select__option"
+                        data-select="option"
+                        data-value="sber"
+                        data-index="3"
+                      >
+                        <img
+                          src="./assets/images/icons/sber-bank-icon.svg"
+                          width="24"
+                          alt="Сбербанк"
+                        />
+                        Сбербанк
+                      </li>
+                      <li
+                        class="itc-select__option"
+                        data-select="option"
+                        data-value="alfa"
+                        data-index="4"
+                      >
+                        <img
+                          src="./assets/images/icons/alfa-bank-icon.svg"
+                          width="24"
+                          alt="Альфа Банк"
+                        />
+                        Альфа Банк
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
               <div class="d-flex">
                 <label class="search-label">
@@ -733,7 +911,16 @@
                     placeholder="Кол-во покупки"
                   />
                   <!-- <button class="search-label__button">RUB</button> -->
-                  <select class="search-label__button" name="currency1" id="" style="border-radius: inherit; border-bottom-left-radius: 0; border-top-left-radius: 0;">
+                  <select
+                    class="search-label__button"
+                    name="currency1"
+                    id=""
+                    style="
+                      border-radius: inherit;
+                      border-bottom-left-radius: 0;
+                      border-top-left-radius: 0;
+                    "
+                  >
                     <option value="RUB">RUB</option>
                     <option value="USD">USD</option>
                     <option value="EUR">EUR</option>
@@ -1588,32 +1775,210 @@
             style="flex: 0 auto"
           >
             <p class="text-light-gray mb-0">Продаю</p>
-            <select
-              name="cyrrency1"
-              id="cyrrency1"
-              class="settings__select wide"
-              data-placeholder="Выберете криптовалюту"
-            >
-              <option value="trc">USDT (TRC-20)</option>
-              <option value="erc">USDT (ERC-20)</option>
-              <option value="btc">BTC</option>
-            </select>
+            <div class="itc-select" id="select-sell">
+              <button
+                type="button"
+                class="itc-select__toggle"
+                name="currency"
+                value=""
+                data-select="toggle"
+                data-index="-1"
+              >
+                Криптовалюта
+              </button>
+              <div class="itc-select__dropdown">
+                <ul class="itc-select__options">
+                  <li
+                    class="itc-select__option"
+                    data-select="option"
+                    data-value="usdt_trc"
+                    data-index="0"
+                  >
+                    <div class="position-relative">
+                      <img
+                        src="./assets/images/icons/usdt.svg"
+                        width="24"
+                        alt="USDT"
+                      />
+                      <img
+                        class="position-absolute"
+                        src="./assets/images/icons/tron.svg"
+                        width="12"
+                        alt="TRON"
+                        style="right: -3px; top: -3px"
+                      />
+                    </div>
+                    USDT (TRC20)
+                  </li>
+                  <li
+                    class="itc-select__option"
+                    data-select="option"
+                    data-value="usdt_erc"
+                    data-index="1"
+                  >
+                    <div class="position-relative">
+                      <img
+                        src="./assets/images/icons/usdt.svg"
+                        width="24"
+                        alt="USDT"
+                      />
+                      <img
+                        class="position-absolute"
+                        src="./assets/images/icons/eth.svg"
+                        width="12"
+                        alt="TRON"
+                        style="right: -3px; top: -3px"
+                      />
+                    </div>
+                    USDT (ERC20)
+                  </li>
+                  <li
+                    class="itc-select__option"
+                    data-select="option"
+                    data-value="t-bank"
+                    data-index="2"
+                  >
+                    <img
+                      src="./assets/images/icons/t-bank-icon.svg"
+                      width="24"
+                      alt="Тинькофф"
+                    />
+                    Тинькофф
+                  </li>
+                  <li
+                    class="itc-select__option"
+                    data-select="option"
+                    data-value="sber"
+                    data-index="3"
+                  >
+                    <img
+                      src="./assets/images/icons/sber-bank-icon.svg"
+                      width="24"
+                      alt="Сбербанк"
+                    />
+                    Сбербанк
+                  </li>
+                  <li
+                    class="itc-select__option"
+                    data-select="option"
+                    data-value="alfa"
+                    data-index="4"
+                  >
+                    <img
+                      src="./assets/images/icons/alfa-bank-icon.svg"
+                      width="24"
+                      alt="Альфа Банк"
+                    />
+                    Альфа Банк
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
           <div
             class="d-flex flex-column gap-0_75 col-sm-6 col-12"
             style="flex: 0 auto"
           >
             <p class="text-light-gray mb-0">Получаю</p>
-            <select
-              name="cyrrency1"
-              id="cyrrency1"
-              class="settings__select wide"
-              data-placeholder="Выберите валюту"
-            >
-              <option value="trc">RUB</option>
-              <option value="erc">USD</option>
-              <option value="btc">EUR</option>
-            </select>
+            <div class="itc-select" id="select-take">
+              <button
+                type="button"
+                class="itc-select__toggle"
+                name="currency"
+                value=""
+                data-select="toggle"
+                data-index="-1"
+              >
+                Криптовалюта
+              </button>
+              <div class="itc-select__dropdown">
+                <ul class="itc-select__options">
+                  <li
+                    class="itc-select__option"
+                    data-select="option"
+                    data-value="usdt_trc"
+                    data-index="0"
+                  >
+                    <div class="position-relative">
+                      <img
+                        src="./assets/images/icons/usdt.svg"
+                        width="24"
+                        alt="USDT"
+                      />
+                      <img
+                        class="position-absolute"
+                        src="./assets/images/icons/tron.svg"
+                        width="12"
+                        alt="TRON"
+                        style="right: -3px; top: -3px"
+                      />
+                    </div>
+                    USDT (TRC20)
+                  </li>
+                  <li
+                    class="itc-select__option"
+                    data-select="option"
+                    data-value="usdt_erc"
+                    data-index="1"
+                  >
+                    <div class="position-relative">
+                      <img
+                        src="./assets/images/icons/usdt.svg"
+                        width="24"
+                        alt="USDT"
+                      />
+                      <img
+                        class="position-absolute"
+                        src="./assets/images/icons/eth.svg"
+                        width="12"
+                        alt="TRON"
+                        style="right: -3px; top: -3px"
+                      />
+                    </div>
+                    USDT (ERC20)
+                  </li>
+                  <li
+                    class="itc-select__option"
+                    data-select="option"
+                    data-value="t-bank"
+                    data-index="2"
+                  >
+                    <img
+                      src="./assets/images/icons/t-bank-icon.svg"
+                      width="24"
+                      alt="Тинькофф"
+                    />
+                    Тинькофф
+                  </li>
+                  <li
+                    class="itc-select__option"
+                    data-select="option"
+                    data-value="sber"
+                    data-index="3"
+                  >
+                    <img
+                      src="./assets/images/icons/sber-bank-icon.svg"
+                      width="24"
+                      alt="Сбербанк"
+                    />
+                    Сбербанк
+                  </li>
+                  <li
+                    class="itc-select__option"
+                    data-select="option"
+                    data-value="alfa"
+                    data-index="4"
+                  >
+                    <img
+                      src="./assets/images/icons/alfa-bank-icon.svg"
+                      width="24"
+                      alt="Альфа Банк"
+                    />
+                    Альфа Банк
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
         <div class="d-flex flex-column gap-2 w-100">
@@ -1811,7 +2176,8 @@
         </p>
         <div class="d-flex flex-column align-items-center gap-0_75">
           <button
-            class="btn btn-gray rounded-4 p-3 d-flex align-items-center gap-2 justify-content-center w-100 connect" data-modal="modal15"
+            class="btn btn-gray rounded-4 p-3 d-flex align-items-center gap-2 justify-content-center w-100 connect"
+            data-modal="modal15"
           >
             <img
               class="filter-black"
@@ -1822,17 +2188,61 @@
           </button>
         </div>
         <div class="d-flex w-100 flex-column gap-3">
-          <select
-            name="reqv"
-            id="reqv"
-            class="settings__select wide"
-            data-placeholder="Выберите реквизиты"
-          >
-            <option value="all">СБОЛ</option>
-            <option value="day">ТИНЬ</option>
-            <option value="week">Еще</option>
-            <option value="month">Еще 2</option>
-          </select>
+          <div class="itc-select wide" id="select-reqv">
+            <button
+              type="button"
+              class="itc-select__toggle"
+              name="select-reqv"
+              value=""
+              data-select="toggle"
+              data-index="-1"
+            >
+              Выберите реквизиты
+            </button>
+            <div class="itc-select__dropdown">
+              <ul class="itc-select__options">
+                <li
+                  class="itc-select__option"
+                  data-select="option"
+                  data-value="t-bank"
+                  data-index="2"
+                >
+                  <img
+                    src="./assets/images/icons/t-bank-icon.svg"
+                    width="24"
+                    alt="Тинькофф"
+                  />
+                  Тинькофф
+                </li>
+                <li
+                  class="itc-select__option"
+                  data-select="option"
+                  data-value="sber"
+                  data-index="3"
+                >
+                  <img
+                    src="./assets/images/icons/sber-bank-icon.svg"
+                    width="24"
+                    alt="Сбербанк"
+                  />
+                  Сбербанк
+                </li>
+                <li
+                  class="itc-select__option"
+                  data-select="option"
+                  data-value="alfa"
+                  data-index="4"
+                >
+                  <img
+                    src="./assets/images/icons/alfa-bank-icon.svg"
+                    width="24"
+                    alt="Альфа Банк"
+                  />
+                  Альфа Банк
+                </li>
+              </ul>
+            </div>
+          </div>
 
           <div class="reqv-container mb-4">
             <div class="reqv-item">
@@ -2169,12 +2579,33 @@
             Подтвердить и закрыть сделку
           </button>
           <div class="chat-label">
-            <label class="btn btn-gray" style="padding: 16px;">
-              <img class="filter-black" src="./assets/images/icons/attach.svg" alt="">
-              <input type="file" accept="image/*" style="display: none;" id="file-input">
+            <label class="btn btn-gray" style="padding: 16px">
+              <img
+                class="filter-black"
+                src="./assets/images/icons/attach.svg"
+                alt=""
+              />
+              <input
+                type="file"
+                accept="image/*"
+                style="display: none"
+                id="file-input"
+              />
             </label>
-            <textarea class="chat-input" name="" id="" placeholder="Написать сообщение..." style="height: auto" oninput="this.style.height = 'auto'; this.style.height = this.scrollHeight + 'px'"></textarea>
-            <button class="btn btn-light-dark p-3 rounded-0_75" style="padding: 16px;">Отправить</button>
+            <textarea
+              class="chat-input"
+              name=""
+              id=""
+              placeholder="Написать сообщение..."
+              style="height: auto"
+              oninput="this.style.height = 'auto'; this.style.height = this.scrollHeight + 'px'"
+            ></textarea>
+            <button
+              class="btn btn-light-dark p-3 rounded-0_75"
+              style="padding: 16px"
+            >
+              Отправить
+            </button>
           </div>
         </div>
       </div>
@@ -2210,18 +2641,31 @@
         searching: false,
       });
     </script>
-    <!-- <script>
-      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
-    </script> -->
+    <script src="./assets/js/custom-select.js"></script>
     <script>
-      // Дебагер
-      document.addEventListener("keydown", function (event) {
-        if (event.keyCode === 119) {
-          event.preventDefault();
-          debugger;
-        }
-      });
+      const selectDefaults = [
+        ["1", "<img src='/assets/images/icons/port-icon.svg' alt=''> Port 1"],
+        ["2", "<img src='/assets/images/icons/port-icon.svg' alt=''> Port 2"],
+        ["3", "<img src='/assets/images/icons/port-icon.svg' alt=''> Port 3"],
+        ["4", "<img src='/assets/images/icons/port-icon.svg' alt=''> Port 4"],
+      ];
+      // const select1 = new ItcCustomSelect("#select-1");
+      new ItcCustomSelect("#select-1");
+      new ItcCustomSelect("#select-2");
+      new ItcCustomSelect("#select-sell");
+      new ItcCustomSelect("#select-take");
+      new ItcCustomSelect("#select-reqv");
+      // const select1 = new ItcCustomSelect("#select-1", {
+      //   name: "static_Country",
+      //   targetValue: "1", // значение по умолчанию
+      //   options: selectDefaults, // опции
+      // });
+
+      // Есть 2 вида инициализации. Через JS как в закоменченном варианте выше, либо через html.
+      // Документация по селекту (если это можно назвать документацией)
+      // https://itchief.ru/javascript/custom-select
+
+      // Если у селекта есть класс wide, то дропдаун во всю ширину
     </script>
   </body>
 </html>
